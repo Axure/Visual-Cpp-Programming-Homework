@@ -265,7 +265,7 @@ void CMFC_DialogDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar)
 {
 	// TODO: Add your control notification handler code here
 	if (pScrollBar->GetDlgCtrlID() == IDC_SLIDER1) {
-		CSliderCtrl *pSlide = (CSliderCtrl*)pScrollBar;
+		CSliderCtrl *pSlide = reinterpret_cast<CSliderCtrl*>(pScrollBar);
 		CString strText;
 		strText.Format("%d", pSlide->GetPos());
 		SetDlgItemText(IDC_STATIC_SLIDER_1, strText);

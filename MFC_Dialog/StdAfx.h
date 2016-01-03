@@ -21,6 +21,9 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include <afxsock.h>		// MFC socket extensions
+#include <iostream>
+#include <string>
+#include <vector>
 
 // This macro is the same as IMPLEMENT_OLECREATE, except it passes TRUE
 //  for the bMultiInstance parameter to the COleObjectFactory constructor.
