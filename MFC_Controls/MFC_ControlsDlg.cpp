@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "MFC_Controls.h"
 #include "MFC_ControlsDlg.h"
+#include "MyPaintDialog.h"
 #include "DlgProxy.h"
 
 #ifdef _DEBUG
@@ -94,9 +95,10 @@ BEGIN_MESSAGE_MAP(CMFC_ControlsDlg, CDialog)
 	//{{AFX_MSG_MAP(CMFC_ControlsDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_DESTROY()
-	ON_WM_CLOSE()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_WM_CLOSE()
+	ON_BN_CLICKED(IDC_BUTTON1, OnButtonClicked)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -226,4 +228,12 @@ BOOL CMFC_ControlsDlg::CanExit()
 	}
 
 	return TRUE;
+}
+
+void CMFC_ControlsDlg::OnButtonClicked() 
+{
+	// TODO: Add your control notification handler code here
+	CMyPaintDialog* pMainWnd = new CMyPaintDialog();
+	pMainWnd->Create(IDD_DIALOG1);
+	pMainWnd->ShowWindow(TRUE);
 }

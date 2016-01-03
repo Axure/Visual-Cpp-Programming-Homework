@@ -2,22 +2,24 @@
 
 [General Info]
 Version=1
-LastClass=CMFC_ControlsDlg
+LastClass=CMyPaintDialog
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "MFC_Controls.h"
 ODLFile=MFC_Controls.odl
 
-ClassCount=4
+ClassCount=5
 Class1=CMFC_ControlsApp
 Class2=CMFC_ControlsDlg
 Class3=CAboutDlg
 Class4=CMFC_ControlsDlgAutoProxy
 
-ResourceCount=3
-Resource1=IDD_ABOUTBOX
+ResourceCount=4
+Resource1=IDD_MFC_CONTROLS_DIALOG
 Resource2=IDR_MAINFRAME
-Resource3=IDD_MFC_CONTROLS_DIALOG
+Resource3=IDD_ABOUTBOX
+Class5=CMyPaintDialog
+Resource4=IDD_DIALOG1
 
 [CLS:CMFC_ControlsApp]
 Type=0
@@ -30,12 +32,15 @@ Type=0
 HeaderFile=MFC_ControlsDlg.h
 ImplementationFile=MFC_ControlsDlg.cpp
 Filter=D
+BaseClass=CDialog
+VirtualFilter=dWC
 
 [CLS:CAboutDlg]
 Type=0
 HeaderFile=MFC_ControlsDlg.h
 ImplementationFile=MFC_ControlsDlg.cpp
 Filter=D
+LastObject=CAboutDlg
 
 [DLG:IDD_ABOUTBOX]
 Type=1
@@ -52,6 +57,7 @@ HeaderFile=DlgProxy.h
 ImplementationFile=DlgProxy.cpp
 BaseClass=CCmdTarget
 Filter=N
+LastObject=CMFC_ControlsDlgAutoProxy
 
 [DLG:IDD_MFC_CONTROLS_DIALOG]
 Type=1
@@ -77,4 +83,18 @@ Control17=IDC_RADIO5,button,1342177289
 Control18=IDC_RADIO6,button,1342177289
 Control19=IDC_RADIO7,button,1342177289
 Control20=IDC_RADIO8,button,1342177289
+
+[CLS:CMyPaintDialog]
+Type=0
+HeaderFile=MyPaintDialog.h
+ImplementationFile=MyPaintDialog.cpp
+BaseClass=CDialog
+Filter=D
+VirtualFilter=dWC
+LastObject=CMyPaintDialog
+
+[DLG:IDD_DIALOG1]
+Type=1
+Class=CMyPaintDialog
+ControlCount=0
 

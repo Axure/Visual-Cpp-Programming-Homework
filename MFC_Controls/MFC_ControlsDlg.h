@@ -52,6 +52,7 @@ protected:
 	afx_msg void OnClose();
 	virtual void OnOK();
 	virtual void OnCancel();
+	afx_msg void OnButtonClicked();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
