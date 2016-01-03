@@ -1,0 +1,42 @@
+// MFC_Dialog.odl : type library source for MFC_Dialog.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (MFC_Dialog.tlb).
+
+[ uuid(69B1257A-056F-4E97-8896-84E1CE031ECF), version(1.0) ]
+library MFC_Dialog
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CMFC_DialogDoc
+	
+	[ uuid(656DD645-A3FA-4228-B80C-5CC39A651A45) ]
+	dispinterface IMFC_Dialog
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMFC_DialogDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMFC_DialogDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMFC_DialogDoc
+	
+	[ uuid(588A1199-EC7E-4D27-845D-3A737258AB6C) ]
+	coclass MFC_Dialog
+	{
+		[default] dispinterface IMFC_Dialog;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
