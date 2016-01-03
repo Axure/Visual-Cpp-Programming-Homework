@@ -61,7 +61,7 @@ void CMyPaintDialog::OnPaint()
 	CPen pen;
 	int penStyles[4] = {PS_SOLID, PS_DASH, PS_DOT, PS_DASHDOT};
 	COLORREF penColors[3] = {RGB(255, 0, 0), RGB(0, 255, 0), RGB(0, 0, 255)};
-	pen.CreatePen(penStyles[this->lineStyle], 3, penColors[this->penColor]);
+	pen.CreatePen(penStyles[this->lineStyle], 1, penColors[this->penColor]);
 	dc.SelectObject(&pen);
 
 	CBrush brush;
