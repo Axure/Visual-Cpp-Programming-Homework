@@ -18,9 +18,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpszCmdLine, 
 }
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {
+
+	HDC hDc;
+	HBRUSH hBrush;
+	HPEN hPen;
+	PAINTSTRUCT PtStr;
+	
+
 	switch(message) {
+	case WM_PAINT:
+		hDc = BeginPaint(hwnd, &PtStr);
+		SetMapMode(hDc, MM_ANISOTROPIC);
+		/************************************************************************/
+		/* Set the pen                                                                     */
+		/************************************************************************/
+		hPen = (HPEN)GetStockObject(BLACK_PEN);
+		hBrush = (HBRUSH)GetStockObject(DKGRAY_BRUSH);
+		SelectObject(hDc, hBrush);
+		SelectObject(hDc, hPen);
+		RoundRect(hDc, 50, 120, 100, 200, 15, 15);
+		return 0;
 	case WM_DESTROY:
 		PostQuitMessage(0);
+		return 0;
 	default:
 		return DefWindowProc(hwnd, message, wParam, lParam);
 	}
