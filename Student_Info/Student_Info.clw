@@ -59,7 +59,7 @@ Filter=N
 [DLG:IDD_STUDENT_INFO_DIALOG]
 Type=1
 Class=CStudent_InfoDlg
-ControlCount=25
+ControlCount=26
 Control1=IDOK,button,1342242817
 Control2=IDCANCEL,button,1342242816
 Control3=ID_HELP,button,1342242816
@@ -85,4 +85,5 @@ Control22=IDC_STATIC,button,1342177287
 Control23=IDC_COMBO_GENDER,combobox,1344340227
 Control24=IDC_BUTTON3,button,1342242816
 Control25=IDC_COMBO_DEPARTMENT_INPUT,combobox,1344340226
+Control26=IDC_LIST5,listbox,1352729347
 
