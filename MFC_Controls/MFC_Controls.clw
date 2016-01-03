@@ -2,7 +2,7 @@
 
 [General Info]
 Version=1
-LastClass=CMyPaintDialog
+LastClass=CMFC_ControlsDlg
 LastTemplate=CDialog
 NewFileInclude1=#include "stdafx.h"
 NewFileInclude2=#include "MFC_Controls.h"
@@ -34,6 +34,7 @@ ImplementationFile=MFC_ControlsDlg.cpp
 Filter=D
 BaseClass=CDialog
 VirtualFilter=dWC
+LastObject=IDC_COMBO1
 
 [CLS:CAboutDlg]
 Type=0
@@ -62,27 +63,25 @@ LastObject=CMFC_ControlsDlgAutoProxy
 [DLG:IDD_MFC_CONTROLS_DIALOG]
 Type=1
 Class=CMFC_ControlsDlg
-ControlCount=20
+ControlCount=18
 Control1=IDOK,button,1342242817
-Control2=IDCANCEL,button,1342242816
-Control3=ID_HELP,button,1342242816
+Control2=IDC_STATIC,static,1342308352
+Control3=IDC_LIST1,listbox,1352728835
 Control4=IDC_STATIC,static,1342308352
-Control5=IDC_LIST1,listbox,1352728835
-Control6=IDC_STATIC,static,1342308352
-Control7=IDC_STATIC,static,1342308352
-Control8=IDC_COMBO1,combobox,1344340226
-Control9=IDC_COMBO2,combobox,1344340226
-Control10=IDC_STATIC,button,1342177287
-Control11=IDC_STATIC,button,1342177287
-Control12=IDC_BUTTON1,button,1342242816
-Control13=IDC_RADIO1,button,1342177289
-Control14=IDC_RADIO2,button,1342177289
-Control15=IDC_RADIO3,button,1342177289
-Control16=IDC_RADIO4,button,1342177289
-Control17=IDC_RADIO5,button,1342177289
-Control18=IDC_RADIO6,button,1342177289
-Control19=IDC_RADIO7,button,1342177289
-Control20=IDC_RADIO8,button,1342177289
+Control5=IDC_STATIC,static,1342308352
+Control6=IDC_COMBO1,combobox,1344340227
+Control7=IDC_COMBO2,combobox,1344340227
+Control8=IDC_STATIC,button,1342177287
+Control9=IDC_STATIC,button,1342177287
+Control10=IDC_BUTTON1,button,1342242816
+Control11=IDC_RADIO1,button,1342177289
+Control12=IDC_RADIO2,button,1342177289
+Control13=IDC_RADIO3,button,1342177289
+Control14=IDC_RADIO4,button,1342177289
+Control15=IDC_RADIO5,button,1342177289
+Control16=IDC_RADIO6,button,1342177289
+Control17=IDC_RADIO7,button,1342177289
+Control18=IDC_RADIO8,button,1342177289
 
 [CLS:CMyPaintDialog]
 Type=0

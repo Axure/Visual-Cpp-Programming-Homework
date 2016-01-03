@@ -87,7 +87,9 @@ void CMFC_ControlsDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CMFC_ControlsDlg)
-		// NOTE: the ClassWizard will add DDX and DDV calls here
+	DDX_Control(pDX, IDC_LIST1, m_lb_shape);
+	DDX_Control(pDX, IDC_COMBO2, m_cb_brush);
+	DDX_Control(pDX, IDC_COMBO1, m_cb_pen);
 	//}}AFX_DATA_MAP
 }
 
@@ -107,6 +109,19 @@ END_MESSAGE_MAP()
 
 BOOL CMFC_ControlsDlg::OnInitDialog()
 {
+	this->shapeTexts.push_back(CString("Line"));
+	this->shapeTexts.push_back(CString("Circle"));
+	this->shapeTexts.push_back(CString("Rectangle"));
+	this->shapeTexts.push_back(CString("RoundRectangle"));
+
+	this->penColorTexts.push_back(CString("Red"));
+	this->penColorTexts.push_back(CString("Blue"));
+	this->penColorTexts.push_back(CString("Green"));
+
+	this->brushColorTexts.push_back(CString("Red"));
+	this->brushColorTexts.push_back(CString("Blue"));
+	this->brushColorTexts.push_back(CString("Green"));
+
 	CDialog::OnInitDialog();
 
 	// Add "About..." menu item to system menu.
@@ -133,6 +148,22 @@ BOOL CMFC_ControlsDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+	std::vector<CString>::iterator it;
+	for (it = this->shapeTexts.begin(); it != this->shapeTexts.end(); ++it)
+	{
+		m_lb_shape.AddString(*it);
+	}
+	m_lb_shape.SetCurSel(0);
+	for (it = this->penColorTexts.begin(); it != this->penColorTexts.end(); ++it)
+	{
+		m_cb_pen.AddString(*it);
+	}
+	m_cb_pen.SetCurSel(0);
+	for (it = this->brushColorTexts.begin(); it != this->brushColorTexts.end(); ++it)
+	{
+		m_cb_brush.AddString(*it);
+	}
+	m_cb_brush.SetCurSel(0);
 	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -233,7 +264,13 @@ BOOL CMFC_ControlsDlg::CanExit()
 void CMFC_ControlsDlg::OnButtonClicked() 
 {
 	// TODO: Add your control notification handler code here
-	CMyPaintDialog* pMainWnd = new CMyPaintDialog();
+	CMyPaintDialog* pMainWnd = new CMyPaintDialog(
+			this->shape,
+			this->penColor,
+			this->brushColor,
+			this->lineStyle,
+			this->fillStyle
+		);
 	pMainWnd->Create(IDD_DIALOG1);
 	pMainWnd->ShowWindow(TRUE);
 }

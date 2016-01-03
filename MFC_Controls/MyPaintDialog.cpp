@@ -23,6 +23,18 @@ CMyPaintDialog::CMyPaintDialog(CWnd* pParent /*=NULL*/)
 	//}}AFX_DATA_INIT
 }
 
+CMyPaintDialog::CMyPaintDialog(int shape, int penColor, int brushColor, int lineStyle, int fillStyle, CWnd* pParent /*=NULL*/)
+: CDialog(CMyPaintDialog::IDD, pParent)
+{
+	this->shape = shape;
+	this->penColor = penColor;
+	this->brushColor = brushColor;
+	this->lineStyle = lineStyle;
+	this->fillStyle = fillStyle;
+	//{{AFX_DATA_INIT(CMyPaintDialog)
+	// NOTE: the ClassWizard will add member initialization here
+	//}}AFX_DATA_INIT
+}
 
 void CMyPaintDialog::DoDataExchange(CDataExchange* pDX)
 {

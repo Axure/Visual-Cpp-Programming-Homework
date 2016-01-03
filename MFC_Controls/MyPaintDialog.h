@@ -13,8 +13,15 @@
 class CMyPaintDialog : public CDialog
 {
 // Construction
+private:
+	int shape;
+	int penColor;
+	int brushColor;
+	int lineStyle;
+	int fillStyle;
 public:
 	CMyPaintDialog(CWnd* pParent = NULL);   // standard constructor
+	CMyPaintDialog(int shape, int penColor, int brushColor, int lineStyle, int fillStyle, CWnd* pParent = NULL);
 
 // Dialog Data
 	//{{AFX_DATA(CMyPaintDialog)

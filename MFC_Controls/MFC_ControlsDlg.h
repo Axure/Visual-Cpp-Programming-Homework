@@ -1,6 +1,6 @@
 // MFC_ControlsDlg.h : header file
 //
-
+#include <vector>
 #if !defined(AFX_MFC_CONTROLSDLG_H__B962D0CC_7D68_4D27_BDDE_0A17FABD90E3__INCLUDED_)
 #define AFX_MFC_CONTROLSDLG_H__B962D0CC_7D68_4D27_BDDE_0A17FABD90E3__INCLUDED_
 
@@ -15,9 +15,21 @@ class CMFC_ControlsDlgAutoProxy;
 
 class CMFC_ControlsDlg : public CDialog
 {
+
 	DECLARE_DYNAMIC(CMFC_ControlsDlg);
 	friend class CMFC_ControlsDlgAutoProxy;
+private:
+	int shape;
+	int penColor;
+	int brushColor;
+	int lineStyle;
+	int fillStyle;
 
+	std::vector<CString> shapeTexts;
+	std::vector<CString> penColorTexts;
+	std::vector<CString> brushColorTexts;
+	std::vector<CString> lineStyleTexts;
+	std::vector<CString> fillStyleTexts;
 // Construction
 public:
 	CMFC_ControlsDlg(CWnd* pParent = NULL);	// standard constructor
@@ -26,7 +38,9 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CMFC_ControlsDlg)
 	enum { IDD = IDD_MFC_CONTROLS_DIALOG };
-		// NOTE: the ClassWizard will add data members here
+	CListBox	m_lb_shape;
+	CComboBox	m_cb_brush;
+	CComboBox	m_cb_pen;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
