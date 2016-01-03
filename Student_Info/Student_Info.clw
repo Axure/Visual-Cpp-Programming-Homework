@@ -30,6 +30,8 @@ Type=0
 HeaderFile=Student_InfoDlg.h
 ImplementationFile=Student_InfoDlg.cpp
 Filter=D
+BaseClass=CDialog
+VirtualFilter=dWC
 
 [CLS:CAboutDlg]
 Type=0
@@ -56,7 +58,7 @@ Filter=N
 [DLG:IDD_STUDENT_INFO_DIALOG]
 Type=1
 Class=CStudent_InfoDlg
-ControlCount=24
+ControlCount=25
 Control1=IDOK,button,1342242817
 Control2=IDCANCEL,button,1342242816
 Control3=ID_HELP,button,1342242816
@@ -81,4 +83,5 @@ Control21=IDC_STATIC,button,1342177287
 Control22=IDC_COMBO2,combobox,1344340226
 Control23=IDC_STATIC,button,1342177287
 Control24=IDC_COMBO_GENDER,combobox,1344340226
+Control25=IDC_BUTTON3,button,1342242816
 

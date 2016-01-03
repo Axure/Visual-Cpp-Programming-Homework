@@ -15,6 +15,7 @@ static char THIS_FILE[] = __FILE__;
 /////////////////////////////////////////////////////////////////////////////
 // CAboutDlg dialog used for App About
 
+
 class CAboutDlg : public CDialog
 {
 public:
@@ -94,9 +95,10 @@ BEGIN_MESSAGE_MAP(CStudent_InfoDlg, CDialog)
 	//{{AFX_MSG_MAP(CStudent_InfoDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_DESTROY()
-	ON_WM_CLOSE()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_WM_CLOSE()
+	ON_BN_CLICKED(IDC_BUTTON3, OnButton3)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -105,8 +107,11 @@ END_MESSAGE_MAP()
 
 BOOL CStudent_InfoDlg::OnInitDialog()
 {
+	
+	//this->genders.push_back(std::string("fsdf"));
+	this->genders[0] = std::string("ÄÐµÄ");
+	this->genders[0] = std::string("Å®µÄ");
 	CDialog::OnInitDialog();
-
 	// Add "About..." menu item to system menu.
 
 	// IDM_ABOUTBOX must be in the system command range.
@@ -226,4 +231,13 @@ BOOL CStudent_InfoDlg::CanExit()
 	}
 
 	return TRUE;
+}
+
+void CStudent_InfoDlg::OnButton3() 
+{
+	// TODO: Add your control notification handler code here
+	CString str;
+	//std::string str;
+	GetDlgItemText(IDC_EDIT_NAME, str);
+	MessageBox(str);
 }

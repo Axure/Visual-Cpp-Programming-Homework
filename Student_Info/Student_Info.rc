@@ -117,6 +117,7 @@ BEGIN
     GROUPBOX        "Static",IDC_STATIC,190,24,208,309
     COMBOBOX        IDC_COMBO_GENDER,77,98,84,17,CBS_DROPDOWN | CBS_SORT | 
                     WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Button3",IDC_BUTTON3,67,270,66,58
 END
 
 
@@ -189,6 +190,13 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR  DISCARDABLE     "res\\cursor1.cur"
 
 /////////////////////////////////////////////////////////////////////////////
 //

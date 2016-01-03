@@ -1,5 +1,8 @@
 // Student_InfoDlg.h : header file
 //
+#include <vector>
+#include <map>
+#include <string>
 
 #if !defined(AFX_STUDENT_INFODLG_H__65F089A7_6184_4F06_886E_9891812DF646__INCLUDED_)
 #define AFX_STUDENT_INFODLG_H__65F089A7_6184_4F06_886E_9891812DF646__INCLUDED_
@@ -13,11 +16,27 @@ class CStudent_InfoDlgAutoProxy;
 /////////////////////////////////////////////////////////////////////////////
 // CStudent_InfoDlg dialog
 
+
+class Student {
+	long student_id;
+	std::string name;
+	
+};
+
+class Department {
+	
+};
+
+
 class CStudent_InfoDlg : public CDialog
 {
 	DECLARE_DYNAMIC(CStudent_InfoDlg);
 	friend class CStudent_InfoDlgAutoProxy;
-
+	
+private:
+	std::vector<Student> students;
+	//std::vector<std::string> genders;
+	std::map<int, std::string> genders;
 // Construction
 public:
 	CStudent_InfoDlg(CWnd* pParent = NULL);	// standard constructor
@@ -52,6 +71,7 @@ protected:
 	afx_msg void OnClose();
 	virtual void OnOK();
 	virtual void OnCancel();
+	afx_msg void OnButton3();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

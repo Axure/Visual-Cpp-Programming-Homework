@@ -5,7 +5,7 @@
 
 #if !defined(AFX_STDAFX_H__E7F641BB_8895_4201_B604_E2E915154B35__INCLUDED_)
 #define AFX_STDAFX_H__E7F641BB_8895_4201_B604_E2E915154B35__INCLUDED_
-
+#pragma warning( disable : 4786)  // Disable warning messages
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
@@ -21,7 +21,11 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 #include <afxsock.h>		// MFC socket extensions
-
+#include <vector>
+#include <map>
+#include <string>
+#include <iostream>
+#include <algorithm>
 // This macro is the same as IMPLEMENT_OLECREATE, except it passes TRUE
 //  for the bMultiInstance parameter to the COleObjectFactory constructor.
 //  We want a separate instance of this application to be launched for
