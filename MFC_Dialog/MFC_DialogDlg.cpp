@@ -138,11 +138,17 @@ BOOL CMFC_DialogDlg::OnInitDialog()
 
 	CString strText1;
 	CSliderCtrl *pSlide1 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER1);
-	CSliderCtrl *pSlide2 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER2);
 	pSlide1->SetRange(0, 100);
 	pSlide1->SetPos(50);
 	strText1.Format("%d", pSlide1->GetPos());
 	SetDlgItemText(IDC_STATIC_SLIDER_1, strText1);
+
+	CString strText2;
+	CSliderCtrl *pSlide2 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER2);
+	pSlide2->SetRange(0, 100);
+	pSlide2->SetPos(50);
+	strText2.Format("%d", pSlide2->GetPos());
+	SetDlgItemText(IDC_STATIC_SLIDER_2, strText1);
 	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -264,11 +270,17 @@ void CMFC_DialogDlg::OnOutofmemorySlider1(NMHDR* pNMHDR, LRESULT* pResult)
 void CMFC_DialogDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar) 
 {
 	// TODO: Add your control notification handler code here
-	if (pScrollBar->GetDlgCtrlID() == IDC_SLIDER1) {
-		CSliderCtrl *pSlide = reinterpret_cast<CSliderCtrl*>(pScrollBar);
-		CString strText;
+	CSliderCtrl *pSlide = reinterpret_cast<CSliderCtrl*>(pScrollBar);
+	CString strText;
 		strText.Format("%d", pSlide->GetPos());
+	switch (pScrollBar->GetDlgCtrlID())
+	{
+	case IDC_SLIDER1:
 		SetDlgItemText(IDC_STATIC_SLIDER_1, strText);
+		break;
+	case IDC_SLIDER2:
+		SetDlgItemText(IDC_STATIC_SLIDER_2, strText);
+		break;
 	}
 	CDialog::OnHScroll(nSBCode, nPos, pScrollBar);
 }
