@@ -258,15 +258,44 @@ BOOL CStudent_InfoDlg::CanExit()
 void CStudent_InfoDlg::OnButton3() 
 {
 	// TODO: Add your control notification handler code here
+	
 	CString str;
 	//std::string str;
 	CString gender;
+	
+
+	
+	/************************************************************************/
+	/* Build the new student.                                                                     */
+	/************************************************************************/
+	Student newStudent;
+
+	GetDlgItemText(IDC_EDIT_NAME, str);
+	newStudent.name = (LPCTSTR)(str);
+
+	GetDlgItemText(IDC_EDIT_STUDENT_ID, str);
+	std::istringstream((LPCTSTR)str) >> newStudent.student_id;
+
 	CComboBoxEx *pGenderCombo = reinterpret_cast<CComboBoxEx*>(GetDlgItem(IDC_COMBO_GENDER));
 	int a = pGenderCombo->GetCurSel();
+	newStudent.gender = a;
+
+	GetDlgItemText(IDC_COMBO_DEPARTMENT_INPUT, str);
+	newStudent.department = (LPCTSTR)(str);
+
+	GetDlgItemText(IDC_EDIT_AGE, str);
+	std::istringstream((LPCTSTR)str) >> newStudent.age;
+	/************************************************************************/
+	/* Get the index of the age combo.                                                                     */
+	/************************************************************************/
 	std::ostringstream sstream;
 	sstream << a;
 	GetDlgItemText(IDC_EDIT_NAME, str);
 	MessageBox(CString(sstream.str().c_str()));
+
+	this->students.push_back(newStudent);
+	MessageBox("新的学生加入了！");
+	MessageBox(CString(newStudent.toStr().c_str()));
 }
 
 void CStudent_InfoDlg::OnButtonAddClicked() 

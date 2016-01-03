@@ -3,6 +3,8 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <sstream>
+
 
 #if !defined(AFX_STUDENT_INFODLG_H__65F089A7_6184_4F06_886E_9891812DF646__INCLUDED_)
 #define AFX_STUDENT_INFODLG_H__65F089A7_6184_4F06_886E_9891812DF646__INCLUDED_
@@ -18,9 +20,22 @@ class CStudent_InfoDlgAutoProxy;
 
 
 class Student {
+public:
 	long student_id;
 	std::string name;
-	
+	int gender;
+	std::string department;
+	int age;
+	std::string toStr() {
+		std::stringstream osstream;
+		osstream
+			<< "student id: " << this->student_id
+			<< ", name: " << this->name
+			<< ", gender: " << this->gender
+			<< ", department: " << this->department
+			<< ", age: " << this->age << std::endl;
+		return osstream.str();
+	}
 };
 
 class Department {
