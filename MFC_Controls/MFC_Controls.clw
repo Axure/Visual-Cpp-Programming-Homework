@@ -15,9 +15,9 @@ Class3=CAboutDlg
 Class4=CMFC_ControlsDlgAutoProxy
 
 ResourceCount=4
-Resource1=IDD_MFC_CONTROLS_DIALOG
+Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
-Resource3=IDD_ABOUTBOX
+Resource3=IDD_MFC_CONTROLS_DIALOG
 Class5=CMyPaintDialog
 Resource4=IDD_DIALOG1
 
@@ -69,8 +69,8 @@ Control2=IDC_STATIC,static,1342308352
 Control3=IDC_LIST1,listbox,1352728835
 Control4=IDC_STATIC,static,1342308352
 Control5=IDC_STATIC,static,1342308352
-Control6=IDC_COMBO1,combobox,1344340227
-Control7=IDC_COMBO2,combobox,1344340227
+Control6=IDC_COMBO1,combobox,1344339971
+Control7=IDC_COMBO2,combobox,1344339971
 Control8=IDC_STATIC,button,1342177287
 Control9=IDC_STATIC,button,1342177287
 Control10=IDC_BUTTON1,button,1342242816

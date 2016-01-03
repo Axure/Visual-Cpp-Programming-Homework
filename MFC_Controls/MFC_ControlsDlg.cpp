@@ -104,6 +104,14 @@ BEGIN_MESSAGE_MAP(CMFC_ControlsDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDC_BUTTON1, OnButtonClicked)
+	ON_BN_CLICKED(IDC_RADIO1, OnRadio1)
+	ON_BN_CLICKED(IDC_RADIO2, OnRadio2)
+	ON_BN_CLICKED(IDC_RADIO3, OnRadio3)
+	ON_BN_CLICKED(IDC_RADIO4, OnRadio4)
+	ON_BN_CLICKED(IDC_RADIO5, OnRadio5)
+	ON_BN_CLICKED(IDC_RADIO6, OnRadio6)
+	ON_BN_CLICKED(IDC_RADIO7, OnRadio7)
+	ON_BN_CLICKED(IDC_RADIO8, OnRadio8)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -116,14 +124,14 @@ BOOL CMFC_ControlsDlg::OnInitDialog()
 	this->shapeTexts.push_back(CString("Circle"));
 	this->shapeTexts.push_back(CString("Rectangle"));
 	this->shapeTexts.push_back(CString("RoundRectangle"));
-
+	
 	this->penColorTexts.push_back(CString("Red"));
-	this->penColorTexts.push_back(CString("Blue"));
 	this->penColorTexts.push_back(CString("Green"));
+	this->penColorTexts.push_back(CString("Blue"));
 
 	this->brushColorTexts.push_back(CString("Red"));
-	this->brushColorTexts.push_back(CString("Blue"));
 	this->brushColorTexts.push_back(CString("Green"));
+	this->brushColorTexts.push_back(CString("Blue"));
 
 	CDialog::OnInitDialog();
 
@@ -291,4 +299,52 @@ void CMFC_ControlsDlg::OnButtonClicked()
 		);
 	pMainWnd->Create(IDD_DIALOG1);
 	pMainWnd->ShowWindow(TRUE);
+}
+
+void CMFC_ControlsDlg::OnRadio1() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_fill = 0;
+}
+
+void CMFC_ControlsDlg::OnRadio2() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_fill = 1;
+}
+
+void CMFC_ControlsDlg::OnRadio3() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_fill = 2;
+}
+
+void CMFC_ControlsDlg::OnRadio4() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_fill = 3;
+}
+
+void CMFC_ControlsDlg::OnRadio5() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_line = 0;
+}
+
+void CMFC_ControlsDlg::OnRadio6() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_line = 1;
+}
+
+void CMFC_ControlsDlg::OnRadio7() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_line = 2;
+}
+
+void CMFC_ControlsDlg::OnRadio8() 
+{
+	// TODO: Add your control notification handler code here
+	m_radio_line = 3;
 }

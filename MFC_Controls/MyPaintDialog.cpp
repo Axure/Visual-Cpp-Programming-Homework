@@ -57,7 +57,41 @@ END_MESSAGE_MAP()
 void CMyPaintDialog::OnPaint() 
 {
 	CPaintDC dc(this); // device context for painting
-	dc.Rectangle(10,10,50,50);
+
+	CPen pen;
+	int penStyles[4] = {PS_SOLID, PS_DASH, PS_DOT, PS_DASHDOT};
+	COLORREF penColors[3] = {RGB(255, 0, 0), RGB(0, 255, 0), RGB(0, 0, 255)};
+	pen.CreatePen(penStyles[this->lineStyle], 3, penColors[this->penColor]);
+	dc.SelectObject(&pen);
+
+	CBrush brush;
+	int brushStyles[4] = {BS_SOLID, HS_CROSS, HS_FDIAGONAL, HS_BDIAGONAL};
+
+	if (this->fillStyle == 0) {
+		brush.CreateSolidBrush(penColors[this->brushColor]);
+	} else {
+		brush.CreateHatchBrush(brushStyles[this->fillStyle], penColors[this->brushColor]);
+	}
+	dc.SelectObject(&brush);
+
+
+	switch(this->shape) {
+	case 0:
+		dc.Ellipse(10, 10, 100, 100);
+		break;
+	case 1:
+		dc.LineTo(100, 100);
+		break;
+	case 2:
+		dc.Rectangle(10, 10, 100, 100);
+		break;
+	case 3:
+		dc.RoundRect(10, 10, 100, 100, 52, 52);
+		break;
+	default:
+		break;
+	}
+	
 	// TODO: Add your message handler code here
 	
 	// Do not call CDialog::OnPaint() for painting messages

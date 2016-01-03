@@ -69,6 +69,14 @@ protected:
 	virtual void OnOK();
 	virtual void OnCancel();
 	afx_msg void OnButtonClicked();
+	afx_msg void OnRadio1();
+	afx_msg void OnRadio2();
+	afx_msg void OnRadio3();
+	afx_msg void OnRadio4();
+	afx_msg void OnRadio5();
+	afx_msg void OnRadio6();
+	afx_msg void OnRadio7();
+	afx_msg void OnRadio8();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };
