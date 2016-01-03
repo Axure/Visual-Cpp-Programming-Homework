@@ -1,0 +1,42 @@
+// MFC_Controls.odl : type library source for MFC_Controls.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (MFC_Controls.tlb).
+
+[ uuid(825B07DC-084D-468C-A8B7-003448E38E40), version(1.0) ]
+library MFC_Controls
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CMFC_ControlsDoc
+	
+	[ uuid(0D589A1D-B181-42B6-B14F-455DED37B9E2) ]
+	dispinterface IMFC_Controls
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CMFC_ControlsDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CMFC_ControlsDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CMFC_ControlsDoc
+	
+	[ uuid(0A24548A-D274-492A-8180-488416FCCDD1) ]
+	coclass MFC_Controls
+	{
+		[default] dispinterface IMFC_Controls;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
