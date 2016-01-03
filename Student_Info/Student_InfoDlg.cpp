@@ -67,7 +67,6 @@ CStudent_InfoDlg::CStudent_InfoDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CStudent_InfoDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CStudent_InfoDlg)
-		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
@@ -87,7 +86,9 @@ void CStudent_InfoDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CStudent_InfoDlg)
-		// NOTE: the ClassWizard will add DDX and DDV calls here
+	DDX_Control(pDX, IDC_COMBO_DEPARTMENT_INPUT, m_cb_department_input);
+	DDX_Control(pDX, IDC_COMBO_DEPARTMENT, m_cb_department);
+	DDX_Control(pDX, IDC_COMBO_GENDER, m_cb_gender);
 	//}}AFX_DATA_MAP
 }
 
@@ -99,6 +100,7 @@ BEGIN_MESSAGE_MAP(CStudent_InfoDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDC_BUTTON3, OnButton3)
+	ON_BN_CLICKED(IDC_BUTTON1, OnButtonAddClicked)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -110,7 +112,10 @@ BOOL CStudent_InfoDlg::OnInitDialog()
 	
 	//this->genders.push_back(std::string("fsdf"));
 	this->genders[0] = std::string("男的");
-	this->genders[0] = std::string("女的");
+	this->genders[1] = std::string("女的");
+	this->departments["数学系"] = true;
+	this->departments["计算机系"] = true;
+
 	CDialog::OnInitDialog();
 	// Add "About..." menu item to system menu.
 
@@ -136,7 +141,24 @@ BOOL CStudent_InfoDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+
+	for (std::map<std::string, bool>::iterator it = this->departments.begin(); it != departments.end(); ++it)
+	{
+		m_cb_department.AddString(it->first.c_str());
+		m_cb_department_input.AddString(it->first.c_str());
+	}
 	
+	m_cb_gender.AddString(CString("男"));
+	m_cb_gender.AddString(CString("女"));
+	//MessageBox("haha");
+	CComboBoxEx *pGenderCombo = reinterpret_cast<CComboBoxEx*>(GetDlgItem(IDC_COMBO_GENDER));
+	pGenderCombo->SetCurSel(0);
+	//COMBOBOXEXITEM  item;
+	//ZeroMemory(&item, sizeof(item));
+	//item.mask = CBEIF_TEXT;
+	//item.iItem = 0;
+	//item.pszText = _T("Hello");
+	//pGenderCombo->InsertItem(&item);
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -238,6 +260,17 @@ void CStudent_InfoDlg::OnButton3()
 	// TODO: Add your control notification handler code here
 	CString str;
 	//std::string str;
+	CString gender;
+	CComboBoxEx *pGenderCombo = reinterpret_cast<CComboBoxEx*>(GetDlgItem(IDC_COMBO_GENDER));
+	int a = pGenderCombo->GetCurSel();
+	std::ostringstream sstream;
+	sstream << a;
 	GetDlgItemText(IDC_EDIT_NAME, str);
-	MessageBox(str);
+	MessageBox(CString(sstream.str().c_str()));
+}
+
+void CStudent_InfoDlg::OnButtonAddClicked() 
+{
+	// TODO: Add your control notification handler code here
+	MessageBox("Adding!");
 }

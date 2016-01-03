@@ -35,6 +35,7 @@ class CStudent_InfoDlg : public CDialog
 	
 private:
 	std::vector<Student> students;
+	std::map<std::string, bool> departments;
 	//std::vector<std::string> genders;
 	std::map<int, std::string> genders;
 // Construction
@@ -45,7 +46,9 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CStudent_InfoDlg)
 	enum { IDD = IDD_STUDENT_INFO_DIALOG };
-		// NOTE: the ClassWizard will add data members here
+	CComboBox	m_cb_department_input;
+	CComboBox	m_cb_department;
+	CComboBox	m_cb_gender;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides
@@ -72,6 +75,7 @@ protected:
 	virtual void OnOK();
 	virtual void OnCancel();
 	afx_msg void OnButton3();
+	afx_msg void OnButtonAddClicked();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

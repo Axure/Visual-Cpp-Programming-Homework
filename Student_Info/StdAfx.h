@@ -24,6 +24,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <sstream>
 #include <iostream>
 #include <algorithm>
 // This macro is the same as IMPLEMENT_OLECREATE, except it passes TRUE
