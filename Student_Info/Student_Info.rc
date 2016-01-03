@@ -1,4 +1,4 @@
-// Microsoft Visual C++ generated resource script.
+//Microsoft Developer Studio generated resource script.
 //
 #include "resource.h"
 
@@ -11,6 +11,15 @@
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -35,19 +44,18 @@ BEGIN
     "#define _AFX_NO_OLE_RESOURCES\r\n"
     "#define _AFX_NO_TRACKER_RESOURCES\r\n"
     "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
-	"\r\n"
-	"#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
-	"#ifdef _WIN32\r\n"
-	"LANGUAGE 4, 2\r\n"
-	"#pragma code_page(936)\r\n"
-	"#endif //_WIN32\r\n"
-	"#include ""res\\Student_Info.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
-	"#include ""l.chs\\afxres.rc""  	// Standard components\r\n"
-	"#endif\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Student_Info.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
     "\0"
 END
 
-/////////////////////////////////////////////////////////////////////////////
 #endif    // APSTUDIO_INVOKED
 
 
@@ -60,12 +68,6 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Student_Info.ico"
 
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
-#ifdef _WIN32
-LANGUAGE 4, 2
-#pragma code_page(936)
-#endif //_WIN32
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
@@ -77,32 +79,53 @@ CAPTION "关于 Student_Info"
 FONT 9, "宋体"
 BEGIN
     ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
-    LTEXT           "Student_Info 1.0 版",IDC_STATIC,40,10,119,8,
-                    SS_NOPREFIX
+    LTEXT           "Student_Info 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
     LTEXT           "版权所有 (C) 2016",IDC_STATIC,40,25,119,8
-    DEFPUSHBUTTON   "确定",IDOK,178,7, 50,14,WS_GROUP
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
 END
 
-IDD_STUDENT_INFO_DIALOG DIALOGEX  0, 0, 320, 200 
+IDD_STUDENT_INFO_DIALOG DIALOGEX 0, 0, 413, 384
 STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 EXSTYLE WS_EX_APPWINDOW
 CAPTION "Student_Info"
 FONT 9, "宋体"
 BEGIN
-    DEFPUSHBUTTON   "确定",IDOK,260,7,50,14
-    PUSHBUTTON      "取消",IDCANCEL,260,23,50,14
-    PUSHBUTTON      "帮助(&H)",ID_HELP,260,40,50,14
-	LTEXT           "TODO: 在这里设置对话控制。",IDC_STATIC,50,90,200,8
+    DEFPUSHBUTTON   "确定",IDOK,347,350,50,14
+    PUSHBUTTON      "取消",IDCANCEL,291,350,50,14
+    PUSHBUTTON      "帮助(&H)",ID_HELP,235,350,50,14
+    EDITTEXT        IDC_EDIT1,64,119,77,23,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,63,92,77,23,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,63,64,77,23,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,64,37,77,23,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,75,265,77,23,ES_AUTOHSCROLL
+    LTEXT           "Static",IDC_STATIC,15,41,42,14
+    LTEXT           "Static",IDC_STATIC,14,71,42,15
+    LTEXT           "Static",IDC_STATIC,15,98,42,15
+    LTEXT           "Static",IDC_STATIC,16,119,42,15
+    LTEXT           "Static",IDC_STATIC,16,149,42,15
+    EDITTEXT        IDC_EDIT6,243,168,126,17,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_LIST2,"SysListView32",WS_BORDER | WS_TABSTOP,
+                    230,201,160,121
+    PUSHBUTTON      "Button1",IDC_BUTTON1,175,44,66,30
+    PUSHBUTTON      "Button2",IDC_BUTTON2,295,45,85,27
+    EDITTEXT        IDC_EDIT7,244,141,123,17,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,247,120,126,11,ES_AUTOHSCROLL
+    LTEXT           "Static",IDC_STATIC,201,143,34,17
+    LTEXT           "Static",IDC_STATIC,202,119,34,17
+    LTEXT           "Static",IDC_STATIC,204,166,34,17
+    GROUPBOX        "Static",IDC_STATIC,41,200,155,160
 END
 
+
+#ifndef _MAC
 /////////////////////////////////////////////////////////////////////////////
 //
 // Version
 //
 
-VS_VERSION_INFO     VERSIONINFO
-  FILEVERSION       1,0,0,1
-  PRODUCTVERSION    1,0,0,1
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -113,26 +136,29 @@ VS_VERSION_INFO     VERSIONINFO
  FILETYPE 0x1L
  FILESUBTYPE 0x0L
 BEGIN
-	BLOCK "StringFileInfo"
-	BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
         BLOCK "080404B0"
-		BEGIN 
-			VALUE "CompanyName",     "\0"
-			VALUE "FileDescription", "Student_Info Microsoft 基础类应用程序\0"
-			VALUE "FileVersion",     "1, 0, 0, 1\0"
-			VALUE "InternalName",    "Student_Info\0"
-			VALUE "LegalCopyright",  "版权所有 (C) 2016\0"
-			VALUE "LegalTrademarks", "\0"
-			VALUE "OriginalFilename","Student_Info.EXE\0"
-			VALUE "ProductName",     "Student_Info 应用程序\0"
-			VALUE "ProductVersion",  "1, 0, 0, 1\0"
-		END
-	END
-	BLOCK "VarFileInfo" 
-	BEGIN 
-		VALUE "Translation", 0x0804, 1200
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Student_Info Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Student_Info\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2016\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Student_Info.EXE\0"
+            VALUE "ProductName", "Student_Info 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
     END
 END
+
+#endif    // !_MAC
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -149,16 +175,16 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 48
     END
+
     IDD_STUDENT_INFO_DIALOG, DIALOG
     BEGIN
         LEFTMARGIN, 7
-        RIGHTMARGIN, 313
+        RIGHTMARGIN, 406
         TOPMARGIN, 7
-        BOTTOMMARGIN,193 
+        BOTTOMMARGIN, 377
     END
 END
 #endif    // APSTUDIO_INVOKED
-
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -168,15 +194,15 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
     IDS_ABOUTBOX            "关于 Student_Info(&A)..."
+    IDP_SOCKETS_INIT_FAILED "Windows 通信端口初始化失败。"
 END
 
-STRINGTABLE DISCARDABLE 
-BEGIN
-	IDP_OLE_INIT_FAILED   	"OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
-	IDP_SOCKETS_INIT_FAILED	"Windows 通信端口初始化失败。"
-END
-#endif
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -193,8 +219,8 @@ END
 LANGUAGE 4, 2
 #pragma code_page(936)
 #endif //_WIN32
-#include "res\\Student_Info.rc2"  // non-Microsoft Visual C++ edited resources
-#include "l.chs\\afxres.rc"  	// Standard components
+#include "res\Student_Info.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
