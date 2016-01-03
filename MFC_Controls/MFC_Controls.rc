@@ -95,29 +95,29 @@ BEGIN
     LISTBOX         IDC_LIST1,23,52,83,49,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
                     WS_VSCROLL | WS_TABSTOP
     LTEXT           "Shape",IDC_STATIC,20,19,66,20
-    LTEXT           "Brush Color",IDC_STATIC,131,65,66,20
+    LTEXT           "Brush Color",IDC_STATIC,131,65,66,10
     COMBOBOX        IDC_COMBO1,131,43,71,66,CBS_DROPDOWNLIST | CBS_SORT | 
                     WS_VSCROLL | WS_TABSTOP
-    COMBOBOX        IDC_COMBO2,129,84,71,74,CBS_DROPDOWNLIST | CBS_SORT | 
+    COMBOBOX        IDC_COMBO2,129,81,71,74,CBS_DROPDOWNLIST | CBS_SORT | 
                     WS_VSCROLL | WS_TABSTOP
     GROUPBOX        "Line Style",IDC_STATIC,16,117,96,121
     GROUPBOX        "Fill Style",IDC_STATIC,121,117,112,123
     PUSHBUTTON      "»æÍ¼",IDC_BUTTON1,237,168,58,25
-    CONTROL         "Radio1",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,139,140,
+    CONTROL         "SolidBrush",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,139,140,40,18
+    CONTROL         "Cross",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,146,164,
                     40,18
-    CONTROL         "Radio1",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,146,164,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,141,180,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,145,203,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,21,130,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,26,154,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,26,175,
-                    40,18
-    CONTROL         "Radio1",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,23,201,
+    CONTROL         "FDiagonal",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,141,
+                    180,74,18
+    CONTROL         "BDiagonal",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,145,
+                    203,40,18
+    CONTROL         "Solid Brush",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,21,130,76,18
+    CONTROL         "Cross",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,26,154,40,
+                    18
+    CONTROL         "Dot",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,26,175,40,
+                    18
+    CONTROL         "DashDot",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,23,201,
                     40,18
 END
 

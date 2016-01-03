@@ -41,6 +41,8 @@ public:
 	CListBox	m_lb_shape;
 	CComboBox	m_cb_brush;
 	CComboBox	m_cb_pen;
+	int		m_radio_fill;
+	int		m_radio_line;
 	//}}AFX_DATA
 
 	// ClassWizard generated virtual function overrides

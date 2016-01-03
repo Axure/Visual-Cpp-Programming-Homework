@@ -34,7 +34,7 @@ ImplementationFile=MFC_ControlsDlg.cpp
 Filter=D
 BaseClass=CDialog
 VirtualFilter=dWC
-LastObject=IDC_COMBO1
+LastObject=IDC_BUTTON1
 
 [CLS:CAboutDlg]
 Type=0
@@ -74,11 +74,11 @@ Control7=IDC_COMBO2,combobox,1344340227
 Control8=IDC_STATIC,button,1342177287
 Control9=IDC_STATIC,button,1342177287
 Control10=IDC_BUTTON1,button,1342242816
-Control11=IDC_RADIO1,button,1342177289
+Control11=IDC_RADIO1,button,1342308361
 Control12=IDC_RADIO2,button,1342177289
 Control13=IDC_RADIO3,button,1342177289
 Control14=IDC_RADIO4,button,1342177289
-Control15=IDC_RADIO5,button,1342177289
+Control15=IDC_RADIO5,button,1342308361
 Control16=IDC_RADIO6,button,1342177289
 Control17=IDC_RADIO7,button,1342177289
 Control18=IDC_RADIO8,button,1342177289

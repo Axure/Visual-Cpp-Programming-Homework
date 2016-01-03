@@ -6,7 +6,7 @@
 #include "MFC_ControlsDlg.h"
 #include "MyPaintDialog.h"
 #include "DlgProxy.h"
-
+#include <sstream>
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -67,7 +67,8 @@ CMFC_ControlsDlg::CMFC_ControlsDlg(CWnd* pParent /*=NULL*/)
 	: CDialog(CMFC_ControlsDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CMFC_ControlsDlg)
-		// NOTE: the ClassWizard will add member initialization here
+	m_radio_fill = -1;
+	m_radio_line = -1;
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
@@ -90,6 +91,8 @@ void CMFC_ControlsDlg::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_LIST1, m_lb_shape);
 	DDX_Control(pDX, IDC_COMBO2, m_cb_brush);
 	DDX_Control(pDX, IDC_COMBO1, m_cb_pen);
+	DDX_Radio(pDX, IDC_RADIO1, m_radio_fill);
+	DDX_Radio(pDX, IDC_RADIO5, m_radio_line);
 	//}}AFX_DATA_MAP
 }
 
@@ -164,6 +167,8 @@ BOOL CMFC_ControlsDlg::OnInitDialog()
 		m_cb_brush.AddString(*it);
 	}
 	m_cb_brush.SetCurSel(0);
+	m_radio_line = 0;
+	m_radio_fill = 0;
 	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -263,6 +268,19 @@ BOOL CMFC_ControlsDlg::CanExit()
 
 void CMFC_ControlsDlg::OnButtonClicked() 
 {
+	this->shape = m_lb_shape.GetCurSel();
+	this->penColor = m_cb_pen.GetCurSel();
+	this->brushColor = m_cb_brush.GetCurSel();
+	this->lineStyle = m_radio_line;
+	this->fillStyle = m_radio_fill;
+	std::ostringstream osstream;
+	osstream
+		<< "Shape: " << this->shape
+		<< ", Pen Color" <<this->penColor
+		<< ", Brush Color" <<this->brushColor
+		<< ", Line Style" <<this->lineStyle
+		<< ", Fill Style" <<this->fillStyle;
+	MessageBox(osstream.str().c_str());
 	// TODO: Add your control notification handler code here
 	CMyPaintDialog* pMainWnd = new CMyPaintDialog(
 			this->shape,
