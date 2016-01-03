@@ -94,9 +94,11 @@ BEGIN_MESSAGE_MAP(CMFC_DialogDlg, CDialog)
 	//{{AFX_MSG_MAP(CMFC_DialogDlg)
 	ON_WM_SYSCOMMAND()
 	ON_WM_DESTROY()
-	ON_WM_CLOSE()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_WM_CLOSE()
+	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SLIDER2, OnOutofmemorySlider2)
+	ON_BN_CLICKED(IDC_CANCEL_BUTTON, OnCancelButtonClicked)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -226,4 +228,18 @@ BOOL CMFC_DialogDlg::CanExit()
 	}
 
 	return TRUE;
+}
+
+void CMFC_DialogDlg::OnOutofmemorySlider2(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+	// TODO: Add your control notification handler code here
+	
+	*pResult = 0;
+}
+
+void CMFC_DialogDlg::OnCancelButtonClicked() 
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(NULL);
+	
 }

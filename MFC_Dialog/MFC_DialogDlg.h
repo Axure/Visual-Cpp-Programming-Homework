@@ -52,6 +52,8 @@ protected:
 	afx_msg void OnClose();
 	virtual void OnOK();
 	virtual void OnCancel();
+	afx_msg void OnOutofmemorySlider2(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnCancelButtonClicked();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

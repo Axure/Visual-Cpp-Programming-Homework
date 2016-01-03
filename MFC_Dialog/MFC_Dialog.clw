@@ -30,6 +30,9 @@ Type=0
 HeaderFile=MFC_DialogDlg.h
 ImplementationFile=MFC_DialogDlg.cpp
 Filter=D
+LastObject=IDOK
+BaseClass=CDialog
+VirtualFilter=dWC
 
 [CLS:CAboutDlg]
 Type=0
@@ -56,9 +59,13 @@ Filter=N
 [DLG:IDD_MFC_DIALOG_DIALOG]
 Type=1
 Class=CMFC_DialogDlg
-ControlCount=4
+ControlCount=8
 Control1=IDOK,button,1342242817
-Control2=IDCANCEL,button,1342242816
-Control3=ID_HELP,button,1342242816
-Control4=IDC_STATIC,static,1342308352
+Control2=ID_HELP,button,1342242816
+Control3=IDC_SLIDER1,msctls_trackbar32,1342242840
+Control4=IDC_SLIDER2,msctls_trackbar32,1342242840
+Control5=IDC_PROGRESS1,msctls_progress32,1350565888
+Control6=IDC_TREE1,SysTreeView32,1350631424
+Control7=IDC_LIST2,SysListView32,1350631424
+Control8=IDC_CANCEL_BUTTON,button,1342242816
 
