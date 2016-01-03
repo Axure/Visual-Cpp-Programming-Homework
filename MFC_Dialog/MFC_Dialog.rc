@@ -67,6 +67,16 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MFC_Dialog.ico"
+IDI_ICON_BLACK          ICON    DISCARDABLE     "res\\icon1.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\icon2.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\icon3.ico"
+IDI_ICON_PURPLE         ICON    DISCARDABLE     "res\\icon4.ico"
+IDI_ICON_YELLOW         ICON    DISCARDABLE     "res\\icon5.ico"
+IDI_ICON_RED            ICON    DISCARDABLE     "res\\icon6.ico"
+IDI_ICON_GREEN          ICON    DISCARDABLE     "res\\icon7.ico"
+IDI_ICON_CYAN           ICON    DISCARDABLE     "res\\icon8.ico"
+IDI_ICON_WHITE          ICON    DISCARDABLE     "res\\icon9.ico"
+IDI_ICON_BLUE           ICON    DISCARDABLE     "res\\icon10.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -91,7 +101,6 @@ CAPTION "MFC_Dialog"
 FONT 9, "宋体"
 BEGIN
     DEFPUSHBUTTON   "确定",IDOK,20,153,50,14
-    PUSHBUTTON      "帮助(&H)",ID_HELP,138,153,50,14
     CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
                     TBS_NOTICKS | WS_TABSTOP,43,46,100,15
     CONTROL         "Slider2",IDC_SLIDER2,"msctls_trackbar32",TBS_BOTH | 
@@ -99,15 +108,17 @@ BEGIN
     CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
                     55,16,75,17
     CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",WS_BORDER | WS_TABSTOP,
-                    225,137,60,50
-    CONTROL         "List2",IDC_LIST2,"SysListView32",WS_BORDER | WS_TABSTOP,
-                    217,65,60,50
+                    215,113,91,62
+    CONTROL         "List2",IDC_LIST2,"SysListView32",LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,211,23,102,79
     PUSHBUTTON      "Cancel",IDC_CANCEL_BUTTON,74,153,50,14
     LTEXT           "Static",IDC_STATIC_SLIDER_1,155,48,28,14
     LTEXT           "Static",IDC_STATIC_SLIDER_2,154,78,35,26
-    LTEXT           "Static",IDC_STATIC,15,46,26,18
-    LTEXT           "Static",IDC_STATIC,19,20,20,16
-    LTEXT           "Static",IDC_STATIC,15,80,30,18
+    LTEXT           "滑杆条",IDC_STATIC,15,46,26,18
+    LTEXT           "进度条",IDC_STATIC,13,21,32,16
+    LTEXT           "滑杆条",IDC_STATIC,15,80,30,18
+    LTEXT           "List Control",IDC_STATIC,155,26,49,16
+    LTEXT           "Tree Control",IDC_STATIC,158,115,49,16
 END
 
 

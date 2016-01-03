@@ -138,18 +138,44 @@ BOOL CMFC_DialogDlg::OnInitDialog()
 
 	CString strText1;
 	CSliderCtrl *pSlide1 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER1);
-	pSlide1->SetRange(0, 100);
+	pSlide1->SetRange(1, 100);
 	pSlide1->SetPos(50);
 	strText1.Format("%d", pSlide1->GetPos());
 	SetDlgItemText(IDC_STATIC_SLIDER_1, strText1);
 
 	CString strText2;
 	CSliderCtrl *pSlide2 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER2);
-	pSlide2->SetRange(0, 100);
-	pSlide2->SetPos(50);
+	pSlide2->SetRange(4.0, 16.0);
+	pSlide2->SetPos(8.0);
 	strText2.Format("%d", pSlide2->GetPos());
-	SetDlgItemText(IDC_STATIC_SLIDER_2, strText1);
+	SetDlgItemText(IDC_STATIC_SLIDER_2, strText2);
 	
+	HICON hIcon[8];
+	int n;
+	m_imageList.Create(16, 16, 0, 8, 8);
+	int icons[8] = {
+		IDI_ICON_WHITE, IDI_ICON_BLACK, IDI_ICON_RED, IDI_ICON_BLUE,
+		IDI_ICON_YELLOW, IDI_ICON_CYAN, IDI_ICON_PURPLE, IDI_ICON_GREEN
+	};
+	int i;
+	for (i = 0; i < 8; ++i)
+	{
+		hIcon[i] = AfxGetApp()->LoadIcon(icons[i]);
+		m_imageList.Add(hIcon[i]);
+	}
+	static char *color[] = {"white", "black", "red", "blue", "yellow", "cyan", "purple", "green"};
+	CListCtrl *pList = reinterpret_cast<CListCtrl*>(GetDlgItem(IDC_LIST2));
+	pList->SetImageList(&m_imageList, LVSIL_NORMAL);
+	for (i = 0; i < 8; ++i)
+	{
+		pList->InsertItem(i, color[i], i);
+	}
+	pList->SetBkColor(RGB(222,222,222));
+	pList->SetTextBkColor(RGB(233,233,233));
+
+	CTreeCtrl *pTree = reinterpret_cast<CTreeCtrl*>(GetDlgItem(IDC_TREE1));
+	//pTree->SetImageList()
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 

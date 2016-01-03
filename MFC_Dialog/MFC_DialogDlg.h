@@ -17,9 +17,10 @@ class CMFC_DialogDlg : public CDialog
 {
 	DECLARE_DYNAMIC(CMFC_DialogDlg);
 	friend class CMFC_DialogDlgAutoProxy;
-
+	CImageList m_imageList;
 // Construction
 public:
+
 	CMFC_DialogDlg(CWnd* pParent = NULL);	// standard constructor
 	virtual ~CMFC_DialogDlg();
 //	void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar);
