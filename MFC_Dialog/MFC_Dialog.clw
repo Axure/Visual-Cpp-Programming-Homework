@@ -30,7 +30,7 @@ Type=0
 HeaderFile=MFC_DialogDlg.h
 ImplementationFile=MFC_DialogDlg.cpp
 Filter=D
-LastObject=IDOK
+LastObject=CMFC_DialogDlg
 BaseClass=CDialog
 VirtualFilter=dWC
 

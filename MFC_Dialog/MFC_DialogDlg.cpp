@@ -100,6 +100,7 @@ BEGIN_MESSAGE_MAP(CMFC_DialogDlg, CDialog)
 	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SLIDER2, OnOutofmemorySlider2)
 	ON_BN_CLICKED(IDC_CANCEL_BUTTON, OnCancelButtonClicked)
 	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SLIDER1, OnOutofmemorySlider1)
+	ON_WM_HSCROLL()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -263,6 +264,11 @@ void CMFC_DialogDlg::OnOutofmemorySlider1(NMHDR* pNMHDR, LRESULT* pResult)
 void CMFC_DialogDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar) 
 {
 	// TODO: Add your control notification handler code here
-	MessageBox(NULL);
-
+	if (pScrollBar->GetDlgCtrlID() == IDC_SLIDER1) {
+		CSliderCtrl *pSlide = (CSliderCtrl*)pScrollBar;
+		CString strText;
+		strText.Format("%d", pSlide->GetPos());
+		SetDlgItemText(IDC_STATIC_SLIDER_1, strText);
+	}
+	CDialog::OnHScroll(nSBCode, nPos, pScrollBar);
 }
