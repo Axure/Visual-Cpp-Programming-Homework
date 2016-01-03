@@ -1,0 +1,42 @@
+// Student_Info.odl : type library source for Student_Info.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Student_Info.tlb).
+
+[ uuid(B6031694-D3B1-4FC1-A15F-79A421E54085), version(1.0) ]
+library Student_Info
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CStudent_InfoDoc
+	
+	[ uuid(D5F7D0FA-2547-4E9B-A981-F725901A48EF) ]
+	dispinterface IStudent_Info
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CStudent_InfoDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CStudent_InfoDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CStudent_InfoDoc
+	
+	[ uuid(EB274D5A-9DB8-40DC-AA33-C8AD8636A8AF) ]
+	coclass Student_Info
+	{
+		[default] dispinterface IStudent_Info;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

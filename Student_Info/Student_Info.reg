@@ -1,0 +1,13 @@
+REGEDIT
+; This .REG file may be used by your SETUP program.
+;   If a SETUP program is not available, the entries below will be
+;   registered in your InitInstance automatically with a call to
+;   CWinApp::RegisterShellFileTypes and COleObjectFactory::UpdateRegistryAll.
+
+
+HKEY_CLASSES_ROOT\Student_Info.Application = Student_Info Application
+HKEY_CLASSES_ROOT\Student_Info.Application\CLSID = {EB274D5A-9DB8-40DC-AA33-C8AD8636A8AF}
+
+HKEY_CLASSES_ROOT\CLSID\{EB274D5A-9DB8-40DC-AA33-C8AD8636A8AF} = Student_Info Application
+HKEY_CLASSES_ROOT\CLSID\{EB274D5A-9DB8-40DC-AA33-C8AD8636A8AF}\ProgId = Student_Info.Application
+HKEY_CLASSES_ROOT\CLSID\{EB274D5A-9DB8-40DC-AA33-C8AD8636A8AF}\LocalServer32 = STUDENT_INFO.EXE
