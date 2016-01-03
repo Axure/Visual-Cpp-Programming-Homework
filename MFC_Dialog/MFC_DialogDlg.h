@@ -22,6 +22,7 @@ class CMFC_DialogDlg : public CDialog
 public:
 	CMFC_DialogDlg(CWnd* pParent = NULL);	// standard constructor
 	virtual ~CMFC_DialogDlg();
+	void OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar);
 
 // Dialog Data
 	//{{AFX_DATA(CMFC_DialogDlg)
@@ -54,6 +55,7 @@ protected:
 	virtual void OnCancel();
 	afx_msg void OnOutofmemorySlider2(NMHDR* pNMHDR, LRESULT* pResult);
 	afx_msg void OnCancelButtonClicked();
+	afx_msg void OnOutofmemorySlider1(NMHDR* pNMHDR, LRESULT* pResult);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

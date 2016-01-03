@@ -103,6 +103,11 @@ BEGIN
     CONTROL         "List2",IDC_LIST2,"SysListView32",WS_BORDER | WS_TABSTOP,
                     217,65,60,50
     PUSHBUTTON      "Cancel",IDC_CANCEL_BUTTON,74,153,50,14
+    LTEXT           "Static",IDC_STATIC_SLIDER_1,155,48,28,14
+    LTEXT           "Static",IDC_STATIC,154,78,35,26
+    LTEXT           "Static",IDC_STATIC,15,46,26,18
+    LTEXT           "Static",IDC_STATIC,19,20,20,16
+    LTEXT           "Static",IDC_STATIC,15,80,30,18
 END
 
 

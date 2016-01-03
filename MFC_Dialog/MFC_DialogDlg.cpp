@@ -99,6 +99,7 @@ BEGIN_MESSAGE_MAP(CMFC_DialogDlg, CDialog)
 	ON_WM_CLOSE()
 	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SLIDER2, OnOutofmemorySlider2)
 	ON_BN_CLICKED(IDC_CANCEL_BUTTON, OnCancelButtonClicked)
+	ON_NOTIFY(NM_OUTOFMEMORY, IDC_SLIDER1, OnOutofmemorySlider1)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -133,6 +134,14 @@ BOOL CMFC_DialogDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+
+	CString strText1;
+	CSliderCtrl *pSlide1 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER1);
+	CSliderCtrl *pSlide2 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER2);
+	pSlide1->SetRange(0, 100);
+	pSlide1->SetPos(50);
+	strText1.Format("%d", pSlide1->GetPos());
+	SetDlgItemText(IDC_STATIC_SLIDER_1, strText1);
 	
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -242,4 +251,18 @@ void CMFC_DialogDlg::OnCancelButtonClicked()
 	// TODO: Add your control notification handler code here
 	MessageBox(NULL);
 	
+}
+
+void CMFC_DialogDlg::OnOutofmemorySlider1(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(NULL);
+	*pResult = 0;
+}
+
+void CMFC_DialogDlg::OnHScroll(UINT nSBCode, UINT nPos, CScrollBar *pScrollBar) 
+{
+	// TODO: Add your control notification handler code here
+	MessageBox(NULL);
+
 }
