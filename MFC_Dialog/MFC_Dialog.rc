@@ -107,7 +107,8 @@ BEGIN
                     TBS_NOTICKS | WS_TABSTOP,48,82,100,15
     CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
                     55,16,75,17
-    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",WS_BORDER | WS_TABSTOP,
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
                     215,113,91,62
     CONTROL         "List2",IDC_LIST2,"SysListView32",LVS_ALIGNLEFT | 
                     WS_BORDER | WS_TABSTOP,211,23,102,79

@@ -135,6 +135,9 @@ BOOL CMFC_DialogDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 	
 	// TODO: Add extra initialization here
+	CProgressCtrl *pProg = reinterpret_cast<CProgressCtrl*>(GetDlgItem(IDC_PROGRESS1));
+	pProg->SetRange(0, 100);
+	pProg->SetPos(33);
 
 	CString strText1;
 	CSliderCtrl *pSlide1 = (CSliderCtrl*)GetDlgItem(IDC_SLIDER1);
@@ -174,7 +177,34 @@ BOOL CMFC_DialogDlg::OnInitDialog()
 	pList->SetTextBkColor(RGB(233,233,233));
 
 	CTreeCtrl *pTree = reinterpret_cast<CTreeCtrl*>(GetDlgItem(IDC_TREE1));
-	//pTree->SetImageList()
+	pTree->SetImageList(&m_imageList, TVSIL_NORMAL);
+
+	TV_INSERTSTRUCT tvinsert;
+	tvinsert.hParent = NULL;
+	tvinsert.hInsertAfter = TVI_LAST;
+	tvinsert.item.mask = TVIF_IMAGE | TVIF_SELECTEDIMAGE | TVIF_TEXT;
+
+	tvinsert.item.hItem = NULL;
+	tvinsert.item.state = 0;
+	tvinsert.item.stateMask = 0;
+	tvinsert.item.cchTextMax = 0;
+	tvinsert.item.iSelectedImage = 1;
+	tvinsert.item.cChildren = 0;
+	tvinsert.item.lParam = 0;
+
+	tvinsert.item.iImage = 2;
+	tvinsert.item.pszText = "Homer";
+	HTREEITEM hDad = pTree->InsertItem(&tvinsert);
+	tvinsert.item.pszText = "Marge";
+	HTREEITEM hMom = pTree->InsertItem(&tvinsert);
+
+	tvinsert.hParent = hDad;
+	tvinsert.item.pszText = "??";
+	pTree->InsertItem(&tvinsert);
+
+	tvinsert.hParent = hMom;
+	pTree->InsertItem(&tvinsert);
+
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }

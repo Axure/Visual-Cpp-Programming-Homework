@@ -30,7 +30,7 @@ Type=0
 HeaderFile=MFC_DialogDlg.h
 ImplementationFile=MFC_DialogDlg.cpp
 Filter=D
-LastObject=CMFC_DialogDlg
+LastObject=IDC_PROGRESS1
 BaseClass=CDialog
 VirtualFilter=dWC
 
@@ -64,7 +64,7 @@ Control1=IDOK,button,1342242817
 Control2=IDC_SLIDER1,msctls_trackbar32,1342242840
 Control3=IDC_SLIDER2,msctls_trackbar32,1342242840
 Control4=IDC_PROGRESS1,msctls_progress32,1350565888
-Control5=IDC_TREE1,SysTreeView32,1350631424
+Control5=IDC_TREE1,SysTreeView32,1350631431
 Control6=IDC_LIST2,SysListView32,1350633472
 Control7=IDC_CANCEL_BUTTON,button,1342242816
 Control8=IDC_STATIC_SLIDER_1,static,1342308352
