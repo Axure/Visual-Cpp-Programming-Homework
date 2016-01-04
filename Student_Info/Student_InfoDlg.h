@@ -93,6 +93,7 @@ protected:
 	virtual void OnCancel();
 	afx_msg void OnButton3();
 	afx_msg void OnButtonAddClicked();
+	afx_msg void OnSearchButtonClicked();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 };

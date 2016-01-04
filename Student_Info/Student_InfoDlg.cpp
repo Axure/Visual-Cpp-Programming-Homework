@@ -102,7 +102,7 @@ BEGIN_MESSAGE_MAP(CStudent_InfoDlg, CDialog)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_CLOSE()
 	ON_BN_CLICKED(IDC_BUTTON3, OnButton3)
-	ON_BN_CLICKED(IDC_BUTTON1, OnButtonAddClicked)
+	ON_BN_CLICKED(IDC_BUTTON2, OnSearchButtonClicked)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -326,7 +326,6 @@ void CStudent_InfoDlg::OnButton3()
 	} else {
 		this->students[newStudent.student_id] = (newStudent);
 		
-		std::ostringstream osstream;
 		LVITEM lvi;
 		CString strItem;
 		char cstudent_id[100];
@@ -354,8 +353,51 @@ void CStudent_InfoDlg::OnButton3()
 	
 }
 
-void CStudent_InfoDlg::OnButtonAddClicked() 
+void CStudent_InfoDlg::OnSearchButtonClicked() 
 {
 	// TODO: Add your control notification handler code here
-	MessageBox("Adding!");
+	CString str_name, str_stu_id, str_dep;
+	m_lc_query.DeleteAllItems();
+	GetDlgItemText(IDC_NAME_SEARCH, str_name);
+	GetDlgItemText(IDC_STUDENT_ID_SEARCH, str_stu_id);
+	GetDlgItemText(IDC_COMBO_DEPARTMENT, str_dep);
+
+	int flag;
+	for (std::map<long, Student>::iterator it = this->students.begin(); it != students.end(); ++it)
+	{
+		flag = 0;
+		if (str_stu_id.GetLength() != 0) {
+			if (atoi(str_stu_id) != it->second.student_id) flag = 1;
+		}
+		if (str_name.GetLength() != 0) {
+			if (str_name.Compare(it->second.name.c_str()) != 0) flag = 1;
+		}
+		if (str_dep.GetLength() != 0) {
+			if (str_dep.Compare(it->second.department.c_str()) != 0) flag = 1;
+		}
+		if (flag == 0) {
+			LVITEM lvi;
+			CString strItem;
+			char cstudent_id[100];
+			char cage[100];
+			lvi.mask =  LVIF_IMAGE | LVIF_TEXT;
+			lvi.iItem = 0;
+			lvi.iSubItem = 0;
+			lvi.pszText = itoa(it->second.student_id, cstudent_id, 10);
+			m_lc_query.InsertItem(&lvi);
+			lvi.iSubItem = 1;
+			lvi.pszText = (char*)it->second.name.c_str();
+			m_lc_query.SetItem(&lvi);
+			lvi.pszText = (char*)this->genders[it->second.gender].c_str();
+			lvi.iSubItem = 2;
+			m_lc_query.SetItem(&lvi);
+			lvi.iSubItem = 3;
+			lvi.pszText = itoa(it->second.age, cage, 10);
+			m_lc_query.SetItem(&lvi);
+			lvi.iSubItem = 4;
+			lvi.pszText = (char*)it->second.department.c_str();
+			m_lc_query.SetItem(&lvi);
+		}
+	}
+	
 }
