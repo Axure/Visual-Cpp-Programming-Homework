@@ -296,22 +296,22 @@ void CStudent_InfoDlg::OnButton3()
 	Student newStudent;
 
 	GetDlgItemText(IDC_EDIT_NAME, str);
-	newStudent.name = (LPCTSTR)(str);
+	newStudent.setName((LPCTSTR)(str));
 
 	GetDlgItemText(IDC_EDIT_STUDENT_ID, str);
 	//std::istringstream((LPCTSTR)str) >> newStudent.student_id;
-	newStudent.student_id = atoi(str);
+	newStudent.setStudentId(atoi(str));
 
 	CComboBoxEx *pGenderCombo = reinterpret_cast<CComboBoxEx*>(GetDlgItem(IDC_COMBO_GENDER));
 	int a = pGenderCombo->GetCurSel();
-	newStudent.gender = a;
+	newStudent.setGender(a);
 
 	GetDlgItemText(IDC_COMBO_DEPARTMENT_INPUT, str);
-	newStudent.department = (LPCTSTR)(str);
+	newStudent.setDepartment((LPCTSTR)(str));
 
 	GetDlgItemText(IDC_EDIT_AGE, str);
 	//std::istringstream((LPCTSTR)str) >> newStudent.age;
-	newStudent.age = atoi(str);
+	newStudent.setAge(atoi(str));
 	/************************************************************************/
 	/* Get the index of the age combo.                                                                     */
 	/************************************************************************/
@@ -320,11 +320,11 @@ void CStudent_InfoDlg::OnButton3()
 	GetDlgItemText(IDC_EDIT_NAME, str);
 	//MessageBox(CString(sstream.str().c_str()));
 
-	if (this->students.find(newStudent.student_id) != this->students.end()) {
+	if (this->students.find(newStudent.getStudentId()) != this->students.end()) {
 		
 		MessageBox("已经有了！");
 	} else {
-		this->students[newStudent.student_id] = (newStudent);
+		this->students[newStudent.getStudentId()] = (newStudent);
 		
 		LVITEM lvi;
 		CString strItem;
@@ -333,19 +333,19 @@ void CStudent_InfoDlg::OnButton3()
 		lvi.mask =  LVIF_IMAGE | LVIF_TEXT;
 		lvi.iItem = 0;
 		lvi.iSubItem = 0;
-		lvi.pszText = itoa(newStudent.student_id, cstudent_id, 10);
+		lvi.pszText = itoa(newStudent.getStudentId(), cstudent_id, 10);
 		m_lc_all.InsertItem(&lvi);
 		lvi.iSubItem = 1;
-		lvi.pszText = (char*)newStudent.name.c_str();
+		lvi.pszText = (char*)newStudent.getName().c_str();
 		m_lc_all.SetItem(&lvi);
-		lvi.pszText = (char*)this->genders[newStudent.gender].c_str();
+		lvi.pszText = (char*)this->genders[newStudent.getGender()].c_str();
 		lvi.iSubItem = 2;
 		m_lc_all.SetItem(&lvi);
 		lvi.iSubItem = 3;
-		lvi.pszText = itoa(newStudent.age, cage, 10);
+		lvi.pszText = itoa(newStudent.getAge(), cage, 10);
 		m_lc_all.SetItem(&lvi);
 		lvi.iSubItem = 4;
-		lvi.pszText = (char*)newStudent.department.c_str();
+		lvi.pszText = (char*)newStudent.getDepartment().c_str();
 		m_lc_all.SetItem(&lvi);
 		
 		MessageBox("新的学生加入了！");
@@ -367,13 +367,13 @@ void CStudent_InfoDlg::OnSearchButtonClicked()
 	{
 		flag = 0;
 		if (str_stu_id.GetLength() != 0) {
-			if (atoi(str_stu_id) != it->second.student_id) flag = 1;
+			if (atoi(str_stu_id) != it->second.getStudentId()) flag = 1;
 		}
 		if (str_name.GetLength() != 0) {
-			if (str_name.Compare(it->second.name.c_str()) != 0) flag = 1;
+			if (str_name.Compare(it->second.getName().c_str()) != 0) flag = 1;
 		}
 		if (str_dep.GetLength() != 0) {
-			if (str_dep.Compare(it->second.department.c_str()) != 0) flag = 1;
+			if (str_dep.Compare(it->second.getDepartment().c_str()) != 0) flag = 1;
 		}
 		if (flag == 0) {
 			LVITEM lvi;
@@ -383,19 +383,19 @@ void CStudent_InfoDlg::OnSearchButtonClicked()
 			lvi.mask =  LVIF_IMAGE | LVIF_TEXT;
 			lvi.iItem = 0;
 			lvi.iSubItem = 0;
-			lvi.pszText = itoa(it->second.student_id, cstudent_id, 10);
+			lvi.pszText = itoa(it->second.getStudentId(), cstudent_id, 10);
 			m_lc_query.InsertItem(&lvi);
 			lvi.iSubItem = 1;
-			lvi.pszText = (char*)it->second.name.c_str();
+			lvi.pszText = (char*)it->second.getName().c_str();
 			m_lc_query.SetItem(&lvi);
-			lvi.pszText = (char*)this->genders[it->second.gender].c_str();
+			lvi.pszText = (char*)this->genders[it->second.getGender()].c_str();
 			lvi.iSubItem = 2;
 			m_lc_query.SetItem(&lvi);
 			lvi.iSubItem = 3;
-			lvi.pszText = itoa(it->second.age, cage, 10);
+			lvi.pszText = itoa(it->second.getAge(), cage, 10);
 			m_lc_query.SetItem(&lvi);
 			lvi.iSubItem = 4;
-			lvi.pszText = (char*)it->second.department.c_str();
+			lvi.pszText = (char*)it->second.getDepartment().c_str();
 			m_lc_query.SetItem(&lvi);
 		}
 	}
