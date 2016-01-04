@@ -67,7 +67,7 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ  /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ   /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ   /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "_DEBUG" /d "_AFXDLL"
@@ -245,6 +245,46 @@ SOURCE=.\StdAfx.h
 # Begin Group "Resource Files"
 
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\res\icon1.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon10.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon2.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon3.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon4.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon5.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon6.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon7.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon8.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\icon9.ico
+# End Source File
 # Begin Source File
 
 SOURCE=.\res\MFC_Dialog.ico

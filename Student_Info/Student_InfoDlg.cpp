@@ -5,7 +5,7 @@
 #include "Student_Info.h"
 #include "Student_InfoDlg.h"
 #include "DlgProxy.h"
-
+#include <stdlib.h>
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
@@ -86,6 +86,8 @@ void CStudent_InfoDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	//{{AFX_DATA_MAP(CStudent_InfoDlg)
+	DDX_Control(pDX, IDC_LIST6, m_lc_all);
+	DDX_Control(pDX, IDC_LIST2, m_lc_query);
 	DDX_Control(pDX, IDC_COMBO_DEPARTMENT_INPUT, m_cb_department_input);
 	DDX_Control(pDX, IDC_COMBO_DEPARTMENT, m_cb_department);
 	DDX_Control(pDX, IDC_COMBO_GENDER, m_cb_gender);
@@ -159,6 +161,29 @@ BOOL CStudent_InfoDlg::OnInitDialog()
 	//item.iItem = 0;
 	//item.pszText = _T("Hello");
 	//pGenderCombo->InsertItem(&item);
+	// 
+	m_lc_all.InsertColumn(0, "学号");
+	m_lc_all.SetColumnWidth(0, 80);
+	m_lc_all.InsertColumn(1, "姓名");
+	m_lc_all.SetColumnWidth(1, 60);
+	m_lc_all.InsertColumn(2, "性别");
+	m_lc_all.SetColumnWidth(2, 40);
+	m_lc_all.InsertColumn(3, "年龄");
+	m_lc_all.SetColumnWidth(3, 40);
+	m_lc_all.InsertColumn(4, "学院");
+	m_lc_all.SetColumnWidth(4, 80);
+
+	m_lc_query.InsertColumn(0, "学号");
+	m_lc_query.SetColumnWidth(0, 80);
+	m_lc_query.InsertColumn(1, "姓名");
+	m_lc_query.SetColumnWidth(1, 60);
+	m_lc_query.InsertColumn(2, "性别");
+	m_lc_query.SetColumnWidth(2, 40);
+	m_lc_query.InsertColumn(3, "年龄");
+	m_lc_query.SetColumnWidth(3, 40);
+	m_lc_query.InsertColumn(4, "学院");
+	m_lc_query.SetColumnWidth(4, 80);
+
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
@@ -274,7 +299,8 @@ void CStudent_InfoDlg::OnButton3()
 	newStudent.name = (LPCTSTR)(str);
 
 	GetDlgItemText(IDC_EDIT_STUDENT_ID, str);
-	std::istringstream((LPCTSTR)str) >> newStudent.student_id;
+	//std::istringstream((LPCTSTR)str) >> newStudent.student_id;
+	newStudent.student_id = atoi(str);
 
 	CComboBoxEx *pGenderCombo = reinterpret_cast<CComboBoxEx*>(GetDlgItem(IDC_COMBO_GENDER));
 	int a = pGenderCombo->GetCurSel();
@@ -284,18 +310,48 @@ void CStudent_InfoDlg::OnButton3()
 	newStudent.department = (LPCTSTR)(str);
 
 	GetDlgItemText(IDC_EDIT_AGE, str);
-	std::istringstream((LPCTSTR)str) >> newStudent.age;
+	//std::istringstream((LPCTSTR)str) >> newStudent.age;
+	newStudent.age = atoi(str);
 	/************************************************************************/
 	/* Get the index of the age combo.                                                                     */
 	/************************************************************************/
 	std::ostringstream sstream;
 	sstream << a;
 	GetDlgItemText(IDC_EDIT_NAME, str);
-	MessageBox(CString(sstream.str().c_str()));
+	//MessageBox(CString(sstream.str().c_str()));
 
-	this->students.push_back(newStudent);
-	MessageBox("新的学生加入了！");
-	MessageBox(CString(newStudent.toStr().c_str()));
+	if (this->students.find(newStudent.student_id) != this->students.end()) {
+		
+		MessageBox("已经有了！");
+	} else {
+		this->students[newStudent.student_id] = (newStudent);
+		
+		std::ostringstream osstream;
+		LVITEM lvi;
+		CString strItem;
+		char cstudent_id[100];
+		char cage[100];
+		lvi.mask =  LVIF_IMAGE | LVIF_TEXT;
+		lvi.iItem = 0;
+		lvi.iSubItem = 0;
+		lvi.pszText = itoa(newStudent.student_id, cstudent_id, 10);
+		m_lc_all.InsertItem(&lvi);
+		lvi.iSubItem = 1;
+		lvi.pszText = (char*)newStudent.name.c_str();
+		m_lc_all.SetItem(&lvi);
+		lvi.pszText = (char*)this->genders[newStudent.gender].c_str();
+		lvi.iSubItem = 2;
+		m_lc_all.SetItem(&lvi);
+		lvi.iSubItem = 3;
+		lvi.pszText = itoa(newStudent.age, cage, 10);
+		m_lc_all.SetItem(&lvi);
+		lvi.iSubItem = 4;
+		lvi.pszText = (char*)newStudent.department.c_str();
+		m_lc_all.SetItem(&lvi);
+		
+		MessageBox("新的学生加入了！");
+	}
+	
 }
 
 void CStudent_InfoDlg::OnButtonAddClicked() 

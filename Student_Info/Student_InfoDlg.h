@@ -49,7 +49,7 @@ class CStudent_InfoDlg : public CDialog
 	friend class CStudent_InfoDlgAutoProxy;
 	
 private:
-	std::vector<Student> students;
+	std::map<long, Student> students;
 	std::map<std::string, bool> departments;
 	//std::vector<std::string> genders;
 	std::map<int, std::string> genders;
@@ -61,6 +61,8 @@ public:
 // Dialog Data
 	//{{AFX_DATA(CStudent_InfoDlg)
 	enum { IDD = IDD_STUDENT_INFO_DIALOG };
+	CListCtrl	m_lc_all;
+	CListCtrl	m_lc_query;
 	CComboBox	m_cb_department_input;
 	CComboBox	m_cb_department;
 	CComboBox	m_cb_gender;
