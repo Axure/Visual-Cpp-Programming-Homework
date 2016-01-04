@@ -1,0 +1,42 @@
+// Engineering.odl : type library source for Engineering.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (Engineering.tlb).
+
+[ uuid(AC8F0BB3-567B-4FE2-B831-882257BA4AE5), version(1.0) ]
+library Engineering
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+
+	//  Primary dispatch interface for CEngineeringDoc
+	
+	[ uuid(AD9247D8-5DFD-4E0C-8FDB-21E18B095D18) ]
+	dispinterface IEngineering
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CEngineeringDlgAutoProxy)
+			//}}AFX_ODL_PROP
+			
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CEngineeringDlgAutoProxy)
+			//}}AFX_ODL_METHOD
+
+	};
+
+	//  Class information for CEngineeringDoc
+	
+	[ uuid(14572EBA-10AE-4F0E-BA41-30BC7C2FFDC7) ]
+	coclass Engineering
+	{
+		[default] dispinterface IEngineering;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

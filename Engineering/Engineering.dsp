@@ -1,24 +1,24 @@
-# Microsoft Developer Studio Project File - Name="Student_Info" - Package Owner=<4>
+# Microsoft Developer Studio Project File - Name="Engineering" - Package Owner=<4>
 # Microsoft Developer Studio Generated Build File, Format Version 6.00
 # ** DO NOT EDIT **
 
 # TARGTYPE "Win32 (x86) Application" 0x0101
 
-CFG=Student_Info - Win32 Debug
+CFG=Engineering - Win32 Debug
 !MESSAGE This is not a valid makefile. To build this project using NMAKE,
 !MESSAGE use the Export Makefile command and run
 !MESSAGE 
-!MESSAGE NMAKE /f "Student_Info.mak".
+!MESSAGE NMAKE /f "Engineering.mak".
 !MESSAGE 
 !MESSAGE You can specify a configuration when running NMAKE
 !MESSAGE by defining the macro CFG on the command line. For example:
 !MESSAGE 
-!MESSAGE NMAKE /f "Student_Info.mak" CFG="Student_Info - Win32 Debug"
+!MESSAGE NMAKE /f "Engineering.mak" CFG="Engineering - Win32 Debug"
 !MESSAGE 
 !MESSAGE Possible choices for configuration are:
 !MESSAGE 
-!MESSAGE "Student_Info - Win32 Release" (based on "Win32 (x86) Application")
-!MESSAGE "Student_Info - Win32 Debug" (based on "Win32 (x86) Application")
+!MESSAGE "Engineering - Win32 Release" (based on "Win32 (x86) Application")
+!MESSAGE "Engineering - Win32 Debug" (based on "Win32 (x86) Application")
 !MESSAGE 
 
 # Begin Project
@@ -29,7 +29,7 @@ CPP=cl.exe
 MTL=midl.exe
 RSC=rc.exe
 
-!IF  "$(CFG)" == "Student_Info - Win32 Release"
+!IF  "$(CFG)" == "Engineering - Win32 Release"
 
 # PROP BASE Use_MFC 6
 # PROP BASE Use_Debug_Libraries 0
@@ -54,7 +54,7 @@ LINK32=link.exe
 # ADD BASE LINK32 /nologo /subsystem:windows /machine:I386
 # ADD LINK32 /nologo /subsystem:windows /machine:I386
 
-!ELSEIF  "$(CFG)" == "Student_Info - Win32 Debug"
+!ELSEIF  "$(CFG)" == "Engineering - Win32 Debug"
 
 # PROP BASE Use_MFC 6
 # PROP BASE Use_Debug_Libraries 1
@@ -67,7 +67,7 @@ LINK32=link.exe
 # PROP Intermediate_Dir "Debug"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Yu"stdafx.h" /FD /GZ  /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR /Yu"stdafx.h" /FD /GZ   /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Yu"stdafx.h" /FD /GZ   /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x804 /d "_DEBUG" /d "_AFXDLL"
@@ -83,8 +83,8 @@ LINK32=link.exe
 
 # Begin Target
 
-# Name "Student_Info - Win32 Release"
-# Name "Student_Info - Win32 Debug"
+# Name "Engineering - Win32 Release"
+# Name "Engineering - Win32 Debug"
 # Begin Group "Source Files"
 
 # PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
@@ -94,24 +94,19 @@ SOURCE=.\DlgProxy.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\StdAfx.cpp
-# ADD CPP /Yc"stdafx.h"
+SOURCE=.\Engineering.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Student_Info.cpp
-# End Source File
-# Begin Source File
+SOURCE=.\hlp\Engineering.hpj
 
-SOURCE=.\hlp\Student_Info.hpj
-
-!IF  "$(CFG)" == "Student_Info - Win32 Release"
+!IF  "$(CFG)" == "Engineering - Win32 Release"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Making help file...
 OutDir=.\Release
-InputPath=.\hlp\Student_Info.hpj
-InputName=Student_Info
+InputPath=.\hlp\Engineering.hpj
+InputName=Engineering
 
 "$(OutDir)\$(InputName).hlp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	start /wait hcw /C /E /M "hlp\$(InputName).hpj" 
@@ -126,13 +121,13 @@ InputName=Student_Info
 	
 # End Custom Build
 
-!ELSEIF  "$(CFG)" == "Student_Info - Win32 Debug"
+!ELSEIF  "$(CFG)" == "Engineering - Win32 Debug"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Making help file...
 OutDir=.\Debug
-InputPath=.\hlp\Student_Info.hpj
-InputName=Student_Info
+InputPath=.\hlp\Engineering.hpj
+InputName=Engineering
 
 "$(OutDir)\$(InputName).hlp" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	start /wait hcw /C /E /M "hlp\$(InputName).hpj" 
@@ -152,15 +147,20 @@ InputName=Student_Info
 # End Source File
 # Begin Source File
 
-SOURCE=.\Student_Info.odl
+SOURCE=.\Engineering.odl
 # End Source File
 # Begin Source File
 
-SOURCE=.\Student_Info.rc
+SOURCE=.\Engineering.rc
 # End Source File
 # Begin Source File
 
-SOURCE=.\Student_InfoDlg.cpp
+SOURCE=.\EngineeringDlg.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\StdAfx.cpp
+# ADD CPP /Yc"stdafx.h"
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -172,13 +172,21 @@ SOURCE=.\DlgProxy.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\Engineering.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\EngineeringDlg.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\Resource.h
 
-!IF  "$(CFG)" == "Student_Info - Win32 Release"
+!IF  "$(CFG)" == "Engineering - Win32 Release"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Making help include file...
-TargetName=Student_Info
+TargetName=Engineering
 InputPath=.\Resource.h
 
 "hlp\$(TargetName).hm" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -200,11 +208,11 @@ InputPath=.\Resource.h
 	
 # End Custom Build
 
-!ELSEIF  "$(CFG)" == "Student_Info - Win32 Debug"
+!ELSEIF  "$(CFG)" == "Engineering - Win32 Debug"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Making help include file...
-TargetName=Student_Info
+TargetName=Engineering
 InputPath=.\Resource.h
 
 "hlp\$(TargetName).hm" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -233,29 +241,17 @@ InputPath=.\Resource.h
 
 SOURCE=.\StdAfx.h
 # End Source File
-# Begin Source File
-
-SOURCE=.\Student_Info.h
-# End Source File
-# Begin Source File
-
-SOURCE=.\Student_InfoDlg.h
-# End Source File
 # End Group
 # Begin Group "Resource Files"
 
 # PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
 # Begin Source File
 
-SOURCE=.\res\cursor1.cur
+SOURCE=.\res\Engineering.ico
 # End Source File
 # Begin Source File
 
-SOURCE=.\res\Student_Info.ico
-# End Source File
-# Begin Source File
-
-SOURCE=.\res\Student_Info.rc2
+SOURCE=.\res\Engineering.rc2
 # End Source File
 # End Group
 # Begin Group "Help Files"
@@ -267,28 +263,28 @@ SOURCE=.\hlp\AfxDlg.rtf
 # End Source File
 # Begin Source File
 
-SOURCE=.\hlp\Student_Info.cnt
+SOURCE=.\hlp\Engineering.cnt
 
-!IF  "$(CFG)" == "Student_Info - Win32 Release"
+!IF  "$(CFG)" == "Engineering - Win32 Release"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Copying contents file...
 OutDir=.\Release
-InputPath=.\hlp\Student_Info.cnt
-InputName=Student_Info
+InputPath=.\hlp\Engineering.cnt
+InputName=Engineering
 
 "$(OutDir)\$(InputName).cnt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	copy "hlp\$(InputName).cnt" $(OutDir)
 
 # End Custom Build
 
-!ELSEIF  "$(CFG)" == "Student_Info - Win32 Debug"
+!ELSEIF  "$(CFG)" == "Engineering - Win32 Debug"
 
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Copying contents file...
 OutDir=.\Debug
-InputPath=.\hlp\Student_Info.cnt
-InputName=Student_Info
+InputPath=.\hlp\Engineering.cnt
+InputName=Engineering
 
 "$(OutDir)\$(InputName).cnt" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	copy "hlp\$(InputName).cnt" $(OutDir)
@@ -301,11 +297,11 @@ InputName=Student_Info
 # End Group
 # Begin Source File
 
-SOURCE=.\ReadMe.txt
+SOURCE=.\Engineering.reg
 # End Source File
 # Begin Source File
 
-SOURCE=.\Student_Info.reg
+SOURCE=.\ReadMe.txt
 # End Source File
 # End Target
 # End Project

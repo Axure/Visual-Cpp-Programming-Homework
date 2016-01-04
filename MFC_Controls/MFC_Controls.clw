@@ -15,9 +15,9 @@ Class3=CAboutDlg
 Class4=CMFC_ControlsDlgAutoProxy
 
 ResourceCount=4
-Resource1=IDD_MFC_CONTROLS_DIALOG
+Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
-Resource3=IDD_ABOUTBOX
+Resource3=IDD_MFC_CONTROLS_DIALOG
 Class5=CMyPaintDialog
 Resource4=IDD_DIALOG1
 
