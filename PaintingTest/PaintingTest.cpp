@@ -136,7 +136,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	HFONT hF_normal;
 	TCHAR szHello[MAX_LOADSTRING];
 	LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
-
+HWND hwndButton;
 	
 			HWND hAboutDialog;
 	switch (message) 
@@ -195,7 +195,19 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			
 			EndPaint(hWnd, &ps);
 
-			
+			hwndButton = CreateWindow( 
+				"BUTTON",  // Predefined class; Unicode assumed 
+				"OK",      // Button text 
+				WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,  // Styles 
+				10,         // x position 
+				10,         // y position 
+				100,        // Button width
+				100,        // Button height
+				hWnd,     // Parent window
+				NULL,       // No menu.
+				hInst, 
+				NULL);      // Pointer not needed.
+			SendMessage(hwndButton, WM_SETFONT, WPARAM(hF_normal), TRUE);
 			break;
 		case WM_DESTROY:
 			PostQuitMessage(0);
