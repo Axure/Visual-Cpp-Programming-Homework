@@ -1,6 +1,5 @@
-//Microsoft Visual C++ generated resource script.
+//Microsoft Developer Studio generated resource script.
 //
-
 #include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
@@ -11,13 +10,17 @@
 #define APSTUDIO_HIDDEN_SYMBOLS
 #include "windows.h"
 #undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
 
 /////////////////////////////////////////////////////////////////////////////
 #undef APSTUDIO_READONLY_SYMBOLS
 
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 #ifdef _WIN32
-LANGUAGE 4, 2
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 #pragma code_page(936)
 #endif //_WIN32
 
@@ -28,8 +31,7 @@ LANGUAGE 4, 2
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-
-IDI_PAINTINGTEST       ICON    DISCARDABLE     "PaintingTest.ICO"
+IDI_PAINTINGTEST        ICON    DISCARDABLE     "PaintingTest.ICO"
 IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
 
 /////////////////////////////////////////////////////////////////////////////
@@ -37,15 +39,15 @@ IDI_SMALL               ICON    DISCARDABLE     "SMALL.ICO"
 // Menu
 //
 
-IDC_PAINTINGTEST MENU DISCARDABLE
+IDC_PAINTINGTEST MENU DISCARDABLE 
 BEGIN
     POPUP "&File"
     BEGIN
-        MENUITEM "E&xit",                IDM_EXIT
+        MENUITEM "E&xit",                       IDM_EXIT
     END
     POPUP "&Help"
     BEGIN
-        MENUITEM "&About ...",           IDM_ABOUT
+        MENUITEM "&About ...",                  IDM_ABOUT
     END
 END
 
@@ -55,7 +57,7 @@ END
 // Accelerator
 //
 
-IDC_PAINTINGTEST ACCELERATORS MOVEABLE PURE
+IDC_PAINTINGTEST ACCELERATORS MOVEABLE PURE 
 BEGIN
     "?",            IDM_ABOUT,              ASCII,  ALT
     "/",            IDM_ABOUT,              ASCII,  ALT
@@ -73,7 +75,8 @@ CAPTION "About"
 FONT 8, "System"
 BEGIN
     ICON            IDI_PAINTINGTEST,IDC_MYICON,14,9,16,16
-    LTEXT           "PaintingTest Version 1.0",IDC_STATIC,49,10,119,8,SS_NOPREFIX
+    LTEXT           "PaintingTest Version 1.0",IDC_STATIC,49,10,119,8,
+                    SS_NOPREFIX
     LTEXT           "Copyright (C) 2016",IDC_STATIC,49,20,119,8
     DEFPUSHBUTTON   "OK",IDOK,195,6,30,11,WS_GROUP
 END
@@ -84,7 +87,6 @@ END
 //
 // TEXTINCLUDE
 //
-
 
 2 TEXTINCLUDE DISCARDABLE 
 BEGIN
@@ -101,9 +103,12 @@ BEGIN
     "\0"
 END
 
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
 #endif    // APSTUDIO_INVOKED
-
-
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -113,12 +118,12 @@ END
 
 STRINGTABLE DISCARDABLE 
 BEGIN
-   IDC_PAINTINGTEST   "PAINTINGTEST"
-   IDS_APP_TITLE       "PaintingTest"
-   IDS_HELLO           "Hello World!"
+    IDS_APP_TITLE           "PaintingTest"
+    IDS_HELLO               "Hello World! 你好。"
+    IDC_PAINTINGTEST        "PAINTINGTEST"
 END
 
-#endif
+#endif    // Chinese (中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

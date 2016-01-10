@@ -133,9 +133,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	int wmId, wmEvent;
 	PAINTSTRUCT ps;
 	HDC hdc;
+	HFONT hF_normal;
 	TCHAR szHello[MAX_LOADSTRING];
 	LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
 
+	
+			HWND hAboutDialog;
 	switch (message) 
 	{
 		case WM_COMMAND:
@@ -159,8 +162,28 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			// TODO: Add any drawing code here...
 			RECT rt;
 			GetClientRect(hWnd, &rt);
+
+			hF_normal = CreateFont(
+					20,
+					0,
+					0,
+					0,
+					FW_HEAVY,
+					0,
+					0,
+					0,
+					GB2312_CHARSET,
+					OUT_DEFAULT_PRECIS,
+					CLIP_DEFAULT_PRECIS,
+					DEFAULT_QUALITY,
+					DEFAULT_PITCH|FF_DONTCARE,
+					(TCHAR*)"»ªÎÄÏ¸ºÚ"
+				);
+			SelectObject(hdc, hF_normal);
 			DrawText(hdc, szHello, strlen(szHello), &rt, DT_CENTER);
-			
+			hAboutDialog = GetDlgItem(hAboutDialog, IDD_ABOUTBOX);
+			SendMessage(hAboutDialog, WM_SETFONT, WPARAM(hF_normal), TRUE);
+
 			HBRUSH hBrush;
 			HPEN hPen;
 			
@@ -183,7 +206,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
    return 0;
 }
 
-// Mesage handler for about box.
+// Message handler for about box.
 LRESULT CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	switch (message)
@@ -197,6 +220,13 @@ LRESULT CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 				EndDialog(hDlg, LOWORD(wParam));
 				return TRUE;
 			}
+
+		case WM_SETFONT: {
+			
+			MessageBox(hDlg, "Fafa", "hehe", NULL);
+			return TRUE;
+			}
+
 			break;
 	}
     return FALSE;
