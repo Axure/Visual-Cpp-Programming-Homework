@@ -159,8 +159,20 @@ SOURCE=.\EngineeringDlg.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\IocContainer.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\StateContainer.cpp
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.cpp
 # ADD CPP /Yc"stdafx.h"
+# End Source File
+# Begin Source File
+
+SOURCE=.\V2Posts.cpp
 # End Source File
 # End Group
 # Begin Group "Header Files"
@@ -177,6 +189,10 @@ SOURCE=.\Engineering.h
 # Begin Source File
 
 SOURCE=.\EngineeringDlg.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\IocContainer.h
 # End Source File
 # Begin Source File
 
@@ -239,7 +255,15 @@ InputPath=.\Resource.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\StateContainer.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\StdAfx.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\V2Posts.h
 # End Source File
 # End Group
 # Begin Group "Resource Files"

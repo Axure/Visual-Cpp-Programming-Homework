@@ -2,7 +2,7 @@
 //  or project specific include files that are used frequently, but
 //      are changed infrequently
 //
-
+#pragma warning(disable: 4786) 
 #if !defined(AFX_STDAFX_H__F24A8791_4585_4147_98CD_A1891AB83A54__INCLUDED_)
 #define AFX_STDAFX_H__F24A8791_4585_4147_98CD_A1891AB83A54__INCLUDED_
 

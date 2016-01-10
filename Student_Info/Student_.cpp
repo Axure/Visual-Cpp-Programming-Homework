@@ -7,6 +7,7 @@
 #include <sstream>
 #include "Student_Info.h"
 #include "Student_.h"
+#include <cassert>
 
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -23,6 +24,15 @@ int Student::numberOfForbiddenChars = 2;
 Student::Student()
 {
 
+}
+
+
+/************************************************************************/
+/* Another constructor                                                                     */
+/************************************************************************/
+Student::Student(std::string id)
+{
+	
 }
 
 Student::~Student()
@@ -62,6 +72,7 @@ Student Student::deserialize(const std::string & input)
 	pNewStudent->setDepartment(cell);
 	std::getline(lineStream, cell, ';');
 	pNewStudent->setAge(cell);
+	assert(lineStream.);
 
 
 

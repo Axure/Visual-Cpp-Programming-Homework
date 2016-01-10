@@ -8,9 +8,23 @@
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000
+/************************************************************************/
+/* Chat or Posts?                                                                     */
+/************************************************************************/
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <queue>
+#include <iostream>
+#include <string>
 
 class IocContainer  
 {
+private:
+	std::map<std::string, void*> members; /* UUID as the key. */
+
+protected:
+
 public:
 	IocContainer();
 	virtual ~IocContainer();

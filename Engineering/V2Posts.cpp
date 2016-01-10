@@ -1,0 +1,27 @@
+// V2Posts.cpp: implementation of the V2Posts class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "Engineering.h"
+#include "V2Posts.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+V2Posts::V2Posts()
+{
+
+}
+
+V2Posts::~V2Posts()
+{
+
+}
